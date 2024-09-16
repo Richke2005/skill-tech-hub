@@ -1,5 +1,7 @@
+const connect = require("./database/config/config.js");
 const express = require("express");
-const routes = require("./routes/index.js")
+const routes = require("./routes/index.js");
+connect();
 
 const app = express();
 

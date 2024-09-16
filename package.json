@@ -25,7 +25,8 @@
   "homepage": "https://github.com/Richke2005/skill-tech-hub#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.20.0"
+    "express": "^4.20.0",
+    "mongoose": "^8.6.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
