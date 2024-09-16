@@ -1,4 +1,4 @@
-const {default: mongoose, Schema} = require("mongoose");
+const {Schema} = require("mongoose");
 
 const instructorSchema = new Schema({
     name: String,
@@ -10,6 +10,4 @@ const instructorSchema = new Schema({
     timestamps: true
 });
 
-const Instructor = mongoose.model("instructors", instructorSchema);
-
-module.exports = Instructor;
+module.exports = instructorSchema;
