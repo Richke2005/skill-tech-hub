@@ -6,7 +6,7 @@ class Service{
     }
 
     async getAllReg(){
-        return new DataSource.models[this.service].find();
+        return DataSource.models[this.service].find();
     }
 
     async getRegById(id){
@@ -18,4 +18,4 @@ class Service{
     }
 }
 
-module.exports = Service
+module.exports = Service;

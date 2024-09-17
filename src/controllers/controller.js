@@ -17,9 +17,9 @@ class Controller{
 
     async post(req, res){
         try{
-            const data = req.body;
-            this.entityService.postReg(data);
-
+            const doc = req.body;
+            const savedDocument = await this.entityService.postReg(doc);
+            res.status(201).send({message: `sucess to create document: ${savedDocument}`});
         }catch(error){
             res.status(500).send({message: error});
         }
@@ -33,3 +33,5 @@ class Controller{
 
     }
 }
+
+module.exports = Controller;
