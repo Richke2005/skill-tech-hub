@@ -18,8 +18,10 @@ class Controller{
     async post(req, res){
         try{
             const data = req.body;
-        }catch(error){
+            this.entityService.postReg(data);
 
+        }catch(error){
+            res.status(500).send({message: error});
         }
     }
 

@@ -3,7 +3,7 @@ const {Schema} = require("mongoose");
 const instructorSchema = new Schema({
     name: String,
     email: String, 
-    especiality: String,
+    specialty: String,
     social_midia: [String]
 }, 
 {
