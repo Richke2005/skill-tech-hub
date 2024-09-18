@@ -16,6 +16,14 @@ class Service{
     async postReg(doc){
         return DataSource.models[this.service].create(doc);
     }
+
+    async updateReg(id, doc){
+        return DataSource.models[this.service].findByIdAndUpdate(id, {$set: doc});
+    }
+
+    async deleteReg(id){
+        return DataSource.models[this.service].findByIdAndDelete(id);
+    }
 }
 
 module.exports = Service;
