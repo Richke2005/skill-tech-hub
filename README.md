@@ -61,7 +61,7 @@ Aqui estão os passos para o outro desenvolvedor rodar o projeto na máquina del
    Se o Nodemon estiver configurado como dependência de desenvolvimento, você pode iniciar o servidor com o seguinte comando:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
    Ou, se não estiver usando Nodemon:
@@ -77,13 +77,9 @@ Aqui estão os passos para o outro desenvolvedor rodar o projeto na máquina del
    Exemplo para acessar a rota de itens:
 
    ```
-   GET http://localhost:5000/api/items
+   GET http://localhost:3001/api/items
    ```
 
 ### MongoDB
 
 Certifique-se de que o MongoDB está rodando localmente ou configure o arquivo `.env` com a URI correta para um servidor remoto, como o MongoDB Atlas.
-
-### Conclusão
-
-Com esses passos, o outro desenvolvedor conseguirá rodar o projeto localmente!
