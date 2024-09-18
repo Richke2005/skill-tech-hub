@@ -5,7 +5,7 @@ Rápida descrição do objetivo de fazer esse projeto
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
 | :sparkles: Nome        | **Titulo do meu projeto**
-| :label: Tecnologias | java, html, ruby, c# (tecnologias utilizadas)
+| :label: Tecnologias | node.js, express, mongoose html e css (tecnologias utilizadas)
 | :rocket: URL         | https://url-deploy.com.br
 | :fire: Desafio     | https://url-do-desafio.com.br
 
@@ -53,7 +53,7 @@ Aqui estão os passos para o outro desenvolvedor rodar o projeto na máquina del
 
    ```
    MONGO_URI=mongodb://localhost:27017/minha-api
-   PORT=5000
+   PORT=3001
    ```
 
 4. **Rodar o servidor**
