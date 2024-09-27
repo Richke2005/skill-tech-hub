@@ -5,7 +5,7 @@ Rápida descrição do objetivo de fazer esse projeto
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
 | :sparkles: Nome        | **Titulo do meu projeto**
-| :label: Tecnologias | java, html, ruby, c# (tecnologias utilizadas)
+| :label: Tecnologias | node.js, express, mongoose html e css (tecnologias utilizadas)
 | :rocket: URL         | https://url-deploy.com.br
 | :fire: Desafio     | https://url-do-desafio.com.br
 
@@ -51,7 +51,7 @@ Rápida descrição do objetivo de fazer esse projeto
 
    ```
    MONGO_URI=mongodb://localhost:27017/minha-api
-   PORT=5000
+   PORT=3001
    ```
 
 4. **Rodar o servidor**
@@ -59,7 +59,7 @@ Rápida descrição do objetivo de fazer esse projeto
    Se o Nodemon estiver configurado como dependência de desenvolvimento, você pode iniciar o servidor com o seguinte comando:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
    Ou, se não estiver usando Nodemon:
@@ -75,13 +75,9 @@ Rápida descrição do objetivo de fazer esse projeto
    Exemplo para acessar a rota de itens:
 
    ```
-   GET http://localhost:5000/api/items
+   GET http://localhost:3001/api/items
    ```
 
 ### MongoDB
 
 Certifique-se de que o MongoDB está rodando localmente ou configure o arquivo `.env` com a URI correta para um servidor remoto, como o MongoDB Atlas.
-
-### Conclusão
-
-Com esses passos, o outro desenvolvedor conseguirá rodar o projeto localmente!
