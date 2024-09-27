@@ -1,5 +1,6 @@
 const express = require("express");
 const instructorRoutes = require("./instructorRoutes.js");
+const enterpriseRoutes = require("./enterpriseRoutes.js");
 
 module.exports = (app) => {
     app.route('/').get((req, res)=>{
@@ -8,6 +9,7 @@ module.exports = (app) => {
 
     app.use(
         express.json(),
-        instructorRoutes
+        instructorRoutes,
+        enterpriseRoutes
     );
 }

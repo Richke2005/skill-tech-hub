@@ -20,8 +20,6 @@ Rápida descrição do objetivo de fazer esse projeto
 - npm instalado (vem junto com o Node.js).
 - MongoDB instalado (ou um serviço como o MongoDB Atlas).
 
-Aqui estão os passos para o outro desenvolvedor rodar o projeto na máquina dele:
-
 ### Passos para Rodar a API RESTful
 
 1. **Clonar o repositório**
