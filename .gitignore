@@ -1,0 +1,3 @@
+node_modules
+# Ignore .env file wich contains passwords and other sensitive information
+.env
