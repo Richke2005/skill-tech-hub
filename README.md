@@ -5,7 +5,7 @@ Rápida descrição do objetivo de fazer esse projeto
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
 | :sparkles: Nome        | **Titulo do meu projeto**
-| :label: Tecnologias | node.js, express, mongoose html e css (tecnologias utilizadas)
+| :label: Tecnologias | HTML, css e javascript (tecnologias utilizadas)
 | :rocket: URL         | https://url-deploy.com.br
 | :fire: Desafio     | https://url-do-desafio.com.br
 
