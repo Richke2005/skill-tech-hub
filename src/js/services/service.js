@@ -16,6 +16,52 @@ class Service {
         });
         return response.json();
     }
+
+    async getDataById(id){
+        const response = await fetch(`${this.#url}/${id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors'
+        });
+        return response.json();
+    }
+
+    async postData(data){
+        const response = await fetch(this.#url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(data)
+        });
+        return response.json();
+    }
+
+    async putData(id, data){
+        const response = await fetch(`${this.#url}/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(data)
+        });
+        return response.json();
+    }
+
+    async deleteData(id){
+        const response = await fetch(`${this.#url}/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors'
+        });
+        return response.json();
+    }
 }
 
 module.exports = Service;
