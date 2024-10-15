@@ -7,13 +7,15 @@ class CurseService extends Service{
     }
 
     async getCurseBySearch(query){
-        const {title, desc, classification} = query;
+        const {title, desc, classification, instructor} = query;
 
-        const search = {};
+        let search = {};
         
         if(title) search.title = { $regex: title, $options: 'i' };
         if(desc) search.desc = { $regex: desc, $options: 'i' };
-        if(classification) search.classification = { $regex: classification, $options: 'i' };
+        if(classification) search = {'classification.name': { $regex: classification, $options: 'i' }};
+        
+        if(instructor) search = {'instructor.name': { $regex: instructor, $options: 'i' }};
 
         return super.getRegBySearch(search);
     }

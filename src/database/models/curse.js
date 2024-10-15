@@ -3,7 +3,16 @@ const {Schema} = require("mongoose");
 const curseSchema = new Schema({
     title: String,
     desc: String, 
-    classification: String,
+    classification: [
+        {
+            _id: false,
+            area_id: { 
+                type: Schema.Types.ObjectId,
+                ref: "areas"
+            },
+            name: String
+        }
+    ],
     modules: [{
         title: String,
         url: String,

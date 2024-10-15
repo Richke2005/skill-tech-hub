@@ -2,7 +2,8 @@ const express = require("express");
 const instructorRoutes = require("./instructorRoutes.js");
 const enterpriseRoutes = require("./enterpriseRoutes.js");
 const curseRoutes = require("./curseRoutes.js");
-const userRoutes = require("./userRoutes.js")
+const userRoutes = require("./userRoutes.js");
+const areaRoutes = require("./areaRoutes.js");
 
 
 module.exports = (app) => {
@@ -15,6 +16,7 @@ module.exports = (app) => {
         instructorRoutes,
         enterpriseRoutes,
         curseRoutes,
-        userRoutes
+        userRoutes,
+        areaRoutes
     );
 }
