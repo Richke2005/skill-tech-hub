@@ -1,9 +1,8 @@
-
 //Importando as classes dos serviços
 const EnterpriseService = require('../services/enterpriseServices.js');
 const CurseService = require('../services/curseServices.js');
 const InstructorService = require('../services/instructorServices.js');
-const UserService = require('../services/userservices.js');
+const UserService = require('../services/userServices.js');
 
 //Instânciando os serviços necessários para a requisição
 const enterpriseService = new EnterpriseService();
