@@ -9,13 +9,23 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/page_actions/index.js":
-/*!**************************************!*\
-  !*** ./src/js/page_actions/index.js ***!
-  \**************************************/
+/***/ "./src/js/page_actions/catalogoCursos.js":
+/*!***********************************************!*\
+  !*** ./src/js/page_actions/catalogoCursos.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("\n//Importando as classes dos serviços\nconst EnterpriseService = __webpack_require__(/*! ../services/enterpriseServices.js */ \"./src/js/services/enterpriseServices.js\");\nconst CurseService = __webpack_require__(/*! ../services/curseServices.js */ \"./src/js/services/curseServices.js\");\nconst InstructorService = __webpack_require__(/*! ../services/instructorServices.js */ \"./src/js/services/instructorServices.js\");\nconst UserService = __webpack_require__(/*! ../services/userservices.js */ \"./src/js/services/userservices.js\");\n\n//Instânciando os serviços necessários para a requisição\nconst enterpriseService = new EnterpriseService();\nconst curseService = new CurseService();\nconst instructorService = new InstructorService();\nconst userService = new UserService();\n\n\n\nconst button = document.getElementById('show');\n\nbutton.addEventListener('click', async () => {\n    const data = await enterpriseService.getAllData();\n    const div = document.getElementById('data');\n    console.log(data);\n    renderData(div, data);\n})\n\nfunction renderData(div, data){\n    div.innerHTML = '';\n    data.forEach(element => {\n        div.innerHTML += `\n            <div>\n                <p>${element.name}</p>\n                <p>${element.email}</p>\n                <p>${element.location.city}</p>\n            </div>`\n    });\n}\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/page_actions/index.js?");
+eval("const AreaService = __webpack_require__(/*! ../services/areaServices.js */ \"./src/js/services/areaServices.js\");\nconst CurseService = __webpack_require__(/*! ../services/curseServices.js */ \"./src/js/services/curseServices.js\");\n\nconst areaService = new AreaService();\nconst curseService = new CurseService();\n\nwindow.onload = async () => {\n    const data = await areaService.getCursesByArea();\n    const div = document.getElementById('areas');\n    console.log(data);\n    renderCatalog(div, data);\n}\n\nfunction renderCatalog(div, data){\n    div.innerHTML = '';\n    data.forEach(element => {\n        const curses = element.curses;\n        const areaDiv = document.createElement('div');\n        areaDiv.className = 'area';\n        const titleDiv = document.createElement('div');\n        titleDiv.className = 'titleView';\n        const curseView = document.createElement('div');\n        curseView.className = 'curseView';\n\n        titleDiv.innerHTML = `<h2>${element.name}</h2> <p>${element.desc}</p>`;\n        div.appendChild(areaDiv);\n        areaDiv.appendChild(titleDiv);\n        areaDiv.appendChild(curseView);\n\n        curses.forEach(curse => {\n            const curseDiv = document.createElement('div');\n            curseDiv.className = 'curse';\n            curseDiv.innerHTML = `<h3>${curse.title}</h3> <p>${curse.desc}</p>`;\n            curseView.appendChild(curseDiv);\n        });\n    });\n}\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/page_actions/catalogoCursos.js?");
+
+/***/ }),
+
+/***/ "./src/js/services/areaServices.js":
+/*!*****************************************!*\
+  !*** ./src/js/services/areaServices.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const Service = __webpack_require__(/*! ./service */ \"./src/js/services/service.js\");\n\nclass AreaService extends Service{\n    constructor(){\n        super('areas');\n    }\n\n    async getCursesByArea(){\n        const response = await fetch(`${this.url}/curses`, {\n            method: 'GET',\n            headers: {\n                'Content-Type': 'application/json',\n            },\n            mode: 'cors'\n        });\n        return response.json();\n    }\n}\n\nmodule.exports = AreaService;\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/services/areaServices.js?");
 
 /***/ }),
 
@@ -29,43 +39,13 @@ eval("const Service = __webpack_require__(/*! ./service */ \"./src/js/services/s
 
 /***/ }),
 
-/***/ "./src/js/services/enterpriseServices.js":
-/*!***********************************************!*\
-  !*** ./src/js/services/enterpriseServices.js ***!
-  \***********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("const Service = __webpack_require__(/*! ./service */ \"./src/js/services/service.js\");\n\nclass EnterpriseService extends Service{\n    constructor(){\n        super('enterprises');\n    }\n}\n\nmodule.exports = EnterpriseService;\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/services/enterpriseServices.js?");
-
-/***/ }),
-
-/***/ "./src/js/services/instructorServices.js":
-/*!***********************************************!*\
-  !*** ./src/js/services/instructorServices.js ***!
-  \***********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("const Service = __webpack_require__(/*! ./service */ \"./src/js/services/service.js\");\n\nclass InstructorService extends Service{\n    constructor(){\n        super('instructors');\n    }\n}\n\nmodule.exports = InstructorService;\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/services/instructorServices.js?");
-
-/***/ }),
-
 /***/ "./src/js/services/service.js":
 /*!************************************!*\
   !*** ./src/js/services/service.js ***!
   \************************************/
 /***/ ((module) => {
 
-eval("class Service {\r\n    #entity;\r\n    #url;\r\n    constructor(entity){\r\n        this.#entity = entity;\r\n        this.#url = `http://192.168.0.10:3001/skilltech/api/v1/${this.#entity}`;\r\n    }\r\n\r\n    async getAllData(){\r\n        const response = await fetch(this.#url, {\r\n            method: 'GET',\r\n            headers: {\r\n                'Content-Type': 'application/json',\r\n            },\r\n            mode: 'cors'\r\n        });\r\n        return response.json();\r\n    }\r\n\r\n    async getDataById(id){\r\n        const response = await fetch(`${this.#url}/${id}`, {\r\n            method: 'GET',\r\n            headers: {\r\n                'Content-Type': 'application/json',\r\n            },\r\n            mode: 'cors'\r\n        });\r\n        return response.json();\r\n    }\r\n\r\n    async postData(data){\r\n        const response = await fetch(this.#url, {\r\n            method: 'POST',\r\n            headers: {\r\n                'Content-Type': 'application/json',\r\n            },\r\n            mode: 'cors',\r\n            body: JSON.stringify(data)\r\n        });\r\n        return response.json();\r\n    }\r\n\r\n    async putData(id, data){\r\n        const response = await fetch(`${this.#url}/${id}`, {\r\n            method: 'PUT',\r\n            headers: {\r\n                'Content-Type': 'application/json',\r\n            },\r\n            mode: 'cors',\r\n            body: JSON.stringify(data)\r\n        });\r\n        return response.json();\r\n    }\r\n\r\n    async deleteData(id){\r\n        const response = await fetch(`${this.#url}/${id}`, {\r\n            method: 'DELETE',\r\n            headers: {\r\n                'Content-Type': 'application/json',\r\n            },\r\n            mode: 'cors'\r\n        });\r\n        return response.json();\r\n    }\r\n}\r\n\r\nmodule.exports = Service;\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/services/service.js?");
-
-/***/ }),
-
-/***/ "./src/js/services/userservices.js":
-/*!*****************************************!*\
-  !*** ./src/js/services/userservices.js ***!
-  \*****************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("const Service = __webpack_require__(/*! ./service */ \"./src/js/services/service.js\");\n\nclass UserService extends Service{\n    constructor(){\n        super('users');\n    }\n}\n\nmodule.exports = UserService;\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/services/userservices.js?");
+eval("class Service {\r\n    #entity;\r\n    url;\r\n\r\n    /**\r\n     * Construtor da classe Service.\r\n     * @param {string} entity - A entidade para a qual o serviço será utilizado.\r\n     */\r\n    constructor(entity) {\r\n        this.#entity = entity;\r\n        this.url = `http://192.168.0.10:3001/skilltech/api/v1/${this.#entity}`;\r\n    }\r\n\r\n    /**\r\n     * Obtém todos os dados da entidade.\r\n     * @returns {Promise<Object>} - Uma promessa que resolve com os dados da entidade.\r\n     */\r\n    async getAllData() {\r\n        const response = await fetch(this.url, {\r\n            method: 'GET',\r\n            headers: {\r\n                'Content-Type': 'application/json',\r\n            },\r\n            mode: 'cors'\r\n        });\r\n        return response.json();\r\n    }\r\n\r\n    /**\r\n     * Obtém os dados de uma entidade específica pelo ID.\r\n     * @param {string} id - O ID da entidade.\r\n     * @returns {Promise<Object>} - Uma promessa que resolve com os dados da entidade.\r\n     */\r\n    async getDataById(id) {\r\n        const response = await fetch(`${this.url}/${id}`, {\r\n            method: 'GET',\r\n            headers: {\r\n                'Content-Type': 'application/json',\r\n            },\r\n            mode: 'cors'\r\n        });\r\n        return response.json();\r\n    }\r\n\r\n    /**\r\n     * Envia dados para a entidade.\r\n     * @param {Object} data - Os dados a serem enviados.\r\n     * @returns {Promise<Object>} - Uma promessa que resolve com a resposta do servidor.\r\n     */\r\n    async postData(data) {\r\n        const response = await fetch(this.url, {\r\n            method: 'POST',\r\n            headers: {\r\n                'Content-Type': 'application/json',\r\n            },\r\n            mode: 'cors',\r\n            body: JSON.stringify(data)\r\n        });\r\n        return response.json();\r\n    }\r\n\r\n    /**\r\n     * Atualiza os dados de uma entidade específica pelo ID.\r\n     * @param {string} id - O ID da entidade.\r\n     * @param {Object} data - Os dados a serem atualizados.\r\n     * @returns {Promise<Object>} - Uma promessa que resolve com a resposta do servidor.\r\n     */\r\n    async putData(id, data) {\r\n        const response = await fetch(`${this.url}/${id}`, {\r\n            method: 'PUT',\r\n            headers: {\r\n                'Content-Type': 'application/json',\r\n            },\r\n            mode: 'cors',\r\n            body: JSON.stringify(data)\r\n        });\r\n        return response.json();\r\n    }\r\n\r\n    /**\r\n     * Deleta uma entidade específica pelo ID.\r\n     * @param {string} id - O ID da entidade.\r\n     * @returns {Promise<Object>} - Uma promessa que resolve com a resposta do servidor.\r\n     */\r\n    async deleteData(id) {\r\n        const response = await fetch(`${this.url}/${id}`, {\r\n            method: 'DELETE',\r\n            headers: {\r\n                'Content-Type': 'application/json',\r\n            },\r\n            mode: 'cors'\r\n        });\r\n        return response.json();\r\n    }\r\n}\r\n\r\nmodule.exports = Service;\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/services/service.js?");
 
 /***/ })
 
@@ -100,7 +80,7 @@ eval("const Service = __webpack_require__(/*! ./service */ \"./src/js/services/s
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/page_actions/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/page_actions/catalogoCursos.js");
 /******/ 	
 /******/ })()
 ;

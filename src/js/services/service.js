@@ -1,6 +1,6 @@
 class Service {
     #entity;
-    #url;
+    url;
 
     /**
      * Construtor da classe Service.
@@ -8,7 +8,7 @@ class Service {
      */
     constructor(entity) {
         this.#entity = entity;
-        this.#url = `http://192.168.0.10:3001/skilltech/api/v1/${this.#entity}`;
+        this.url = `http://192.168.0.10:3001/skilltech/api/v1/${this.#entity}`;
     }
 
     /**
@@ -16,7 +16,7 @@ class Service {
      * @returns {Promise<Object>} - Uma promessa que resolve com os dados da entidade.
      */
     async getAllData() {
-        const response = await fetch(this.#url, {
+        const response = await fetch(this.url, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ class Service {
      * @returns {Promise<Object>} - Uma promessa que resolve com os dados da entidade.
      */
     async getDataById(id) {
-        const response = await fetch(`${this.#url}/${id}`, {
+        const response = await fetch(`${this.url}/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ class Service {
      * @returns {Promise<Object>} - Uma promessa que resolve com a resposta do servidor.
      */
     async postData(data) {
-        const response = await fetch(this.#url, {
+        const response = await fetch(this.url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ class Service {
      * @returns {Promise<Object>} - Uma promessa que resolve com a resposta do servidor.
      */
     async putData(id, data) {
-        const response = await fetch(`${this.#url}/${id}`, {
+        const response = await fetch(`${this.url}/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ class Service {
      * @returns {Promise<Object>} - Uma promessa que resolve com a resposta do servidor.
      */
     async deleteData(id) {
-        const response = await fetch(`${this.#url}/${id}`, {
+        const response = await fetch(`${this.url}/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
