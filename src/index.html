@@ -1,37 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
     <title>SkillTech Hub</title>
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 <body>
-    <div class="div">
-        <div class="main">
-        
-           <div class="search">
-            <input class="srch" type="search" name="" placeholder="Buscar">
-            <a href="#"> <button class="btn">Pesquise</button></a>
-           </div>
-
-            <div class="content">
-            
-                <h1>Ensino<br>Industrial</h1>
-                <button class="btnn" ><a href="./pages/">FUNCIONÁRIO</a></button>
-                <button class="btnn" id="1"><a  href="./pages/login_empresa.html">EMPRESA</a></button>
-                <button class="btnn" id="1"><a  href="./pages/catalogo_teste.html">CATALOGO</a></button> !teste!
-                
-                <button id="show"> show info</button>
-                <div id="data">
-
-                </div>
-            
-                <p class="link">Não tem uma conta? crie uma <a>aqui</a></p>
-            </div>
-                
+    <header>
+        <div id="logo">
+            <img src="" alt="">
         </div>
-    </div> 
-    <script src="../dist/bundle.js"></script>
+        <div>
+         
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a class="button" href="./pages/login_empresa.html">Enterprise</a></li>
+                <li><a class="button" href="./pages/catalogo_teste.html">Login</a></li>
+            </ul>
+    </header>
+
+    <section id="presentation">
+        <style>
+            /* Line movement animation */
+            @keyframes moveLines {
+              0% {
+                stroke-dashoffset: 1000;
+              }
+              100% {
+                stroke-dashoffset: 0;
+              }
+            }
+          
+            /* Style for lines that will move */
+            line {
+              stroke-dasharray: 200;
+              stroke-dashoffset: 1000;
+              animation: moveLines 5s ease-in-out infinite alternate;
+            }
+          
+            /* Animation for pulsing circles */
+            @keyframes pulse {
+              0% {
+                r: 8;
+                fill: #ffab00;
+                opacity: 1;
+              }
+              50% {
+                r: 12;
+                fill: #ff6f00;
+                opacity: 0.5;
+              }
+              100% {
+                r: 8;
+                fill: #ffab00;
+                opacity: 1;
+              }
+            }
+          
+            /* Apply pulse animation to the circles (tech nodes) */
+            circle {
+              animation: pulse 3s infinite ease-in-out;
+            }
+          </style>
+          <div id="animation">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="none">
+            <!-- Transparent background (no rect fill) -->
+          
+            <!-- Geometric tech-like grid -->
+            <g stroke="#4db6ac" stroke-width="1" opacity="0.8">
+              <!-- Horizontal lines -->
+              <line x1="0" y1="50" x2="800" y2="50" />
+              <line x1="0" y1="150" x2="800" y2="150" />
+              <line x1="0" y1="250" x2="800" y2="250" />
+              <line x1="0" y1="350" x2="800" y2="350" />
+              <line x1="0" y1="450" x2="800" y2="450" />
+              <line x1="0" y1="550" x2="800" y2="550" />
+              
+              <!-- Vertical lines -->
+              <line x1="100" y1="0" x2="100" y2="600" />
+              <line x1="300" y1="0" x2="300" y2="600" />
+              <line x1="500" y1="0" x2="500" y2="600" />
+              <line x1="700" y1="0" x2="700" y2="600" />
+            </g>
+          
+            <!-- Abstract tech elements (circles and connecting lines) -->
+            <g stroke="#81d4fa" stroke-width="2" fill="none">
+              <!-- Diagonal connecting lines -->
+              <line x1="100" y1="50" x2="300" y2="150" />
+              <line x1="300" y1="150" x2="500" y2="50" />
+              <line x1="500" y1="50" x2="700" y2="150" />
+              
+              <line x1="100" y1="250" x2="300" y2="350" />
+              <line x1="300" y1="350" x2="500" y2="250" />
+              <line x1="500" y1="250" x2="700" y2="350" />
+              
+              <line x1="100" y1="450" x2="300" y2="550" />
+              <line x1="300" y1="550" x2="500" y2="450" />
+              <line x1="500" y1="450" x2="700" y2="550" />
+            </g>
+          
+            <!-- Circles (representing tech nodes) -->
+            <g fill="#ffab00">
+              <circle cx="100" cy="50" r="8" />
+              <circle cx="300" cy="150" r="8" />
+              <circle cx="500" cy="50" r="8" />
+              <circle cx="700" cy="150" r="8" />
+              
+              <circle cx="100" cy="250" r="8" />
+              <circle cx="300" cy="350" r="8" />
+              <circle cx="500" cy="250" r="8" />
+              <circle cx="700" cy="350" r="8" />
+              
+              <circle cx="100" cy="450" r="8" />
+              <circle cx="300" cy="550" r="8" />
+              <circle cx="500" cy="450" r="8" />
+              <circle cx="700" cy="550" r="8" />
+            </g>
+          </svg>
+          </div>         
+        <div id="title">
+            <h1>SkillTech Hub</h1>
+        </div>
+    </section>
+
+    <section id="content">
+        <div>
+            <h2>Quem somos</h2>
+            <p>Somos uma empresa que conecta profissionais de tecnologia com empresas que buscam contratar profissionais qualificados.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facilis ut itaque, fugit reiciendis recusandae officiis quas earum error illo illum eveniet placeat in natus voluptas rerum sequi. Sit, quod.</p>
+        
+        </div>
+    </section>
+    
 </body>
 </html>

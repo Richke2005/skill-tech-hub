@@ -1,232 +1,127 @@
-*{
-    margin: 0;
-    padding: 0;
-
+* {
+    margin: 0 auto;
 }
-
-html, body {
-    height: 100%; /* Garante que ambos ocupem 100% da altura da viewport */
-    
-  }
 
 body {
-    text-align: center; 
-    
-    
- }
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
- .div{
-    background:url(industria-4-0-o-que-e-conceitos.jpg);
-    background-size: cover;
+header {
+    position: absolute;
+    top: 0px;
     display: flex;
+    width: 100%;
+    height: 10vh;
+    padding: 5px;
+    justify-content: space-around;
     align-items: center;
-    
- }
+    background-color: transparent;
+}
 
- 
-.main{
-   background-color:white;
-   /*margin-left: 155px;*/
-   /*background-size:contain;*/
-   height: 100vh;
-   
-   width: 80%;
-   background-size: cover;
-   margin-left: auto;
-   margin-right: auto;
+#menu ul {
+    display: flex;
+    list-style: none;
+}
+
+#menu ul li {
+    margin: 0 10px;
+    text-transform: uppercase;
+}
+
+#menu ul li a {
+    text-decoration: none;
+}
+
+.button {
+    background-color: #f4f4f4;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#presentation {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    background: rgb(64,9,120);
+    background: linear-gradient(90deg, rgba(64,9,120,1) 0%, rgba(67,10,125,1) 22%, rgba(45,5,121,1) 54%, rgba(9,0,117,1) 100%);
+}
+
+#presentation #animation{
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    z-index: 0;
+}
+
+#presentation #title {
+    font-family: dune_rise;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+    #presentation #animation{
+        width: 60%;
+        height: 30%;
+        position: absolute;
+        z-index: 0;
+    }
+    
+    #presentation #title {
+        font-size: 1rem;
+    }
     
 }
 
-.search{
-    margin: 0;
-    padding: 0;
-    
-    
-    /*padding-left: 340px;*/
-    background-color: grey;
-    height: 55px;
-    gap: 0;
-    align-items: center;
+#content {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    width: 100%;
-
-    
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(90deg, rgba(64,9,120,1) 0%, rgba(67,10,125,1) 22%, rgba(45,5,121,1) 54%, rgba(9,0,117,1) 100%);
 }
 
-input[type="text"]{
-    flex: 1;
-    margin: 0;
-    padding:0;
-}
-
-.btn {
-    margin: 0;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.srch{
-    width: 800px;
-    height:40px;
-    border: 2px solid black;
-    margin-top: 0%;
-    border-radius: 20px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    margin-top: 4px;
-    font-size: medium;
-    text-align: end;
-    margin: 0;
-    padding: 0;
-
-    
-    
+@font-face {
+    font-family: 'nasalization'; /* Give your font a unique name */
+    src: url('../../public/fonts/nasalization/nasalization-rg.otf') format('opentype'); /* Path to font files */
+    font-weight: normal;  /* Specify the font's weight */
+    font-style: normal;  /* Specify the font's style */
 }
 
 
-
-
-
-.btn{
-    width:105px;
-    height: 40px;
-    background: #ff7200;
-    border:2px solid #ff7200;
-    color: #fff;
-    font-size: 15px;
-   
-    transition: 0.2s ease;
-    cursor: pointer;
-    border:3px solid #ff7200;
-    margin: 0;
-    padding: 0;
-    /*margin-top: 5px;*/
-   
+@font-face {
+    font-family: 'lemon_milk'; /* Give your font a unique name */
+    src: url('../../public/fonts/lemon_milk/LEMONMILK-Light.otf') format('opentype');/* Path to font files */
+    font-weight: normal;  /* Specify the font's weight */
+    font-style: normal;  /* Specify the font's style */
 }
 
-.btn:hover{
-    color: #000;
+@font-face {
+    font-family: 'good_times'; /* Give your font a unique name */
+    src: url('../../public/fonts/good_times/good_times.otf') format('opentype');/* Path to font files */
+    font-weight: normal;  /* Specify the font's weight */
+    font-style: normal;  /* Specify the font's style */
 }
 
-.btn:focus{
-    outline: none;
+@font-face {
+  font-family: 'dune_rise'; /* Give your font a unique name */
+  src: url('../../public/fonts/dune_rise/Dune_Rise.otf') format('opentype'),
+  url('../../public/fonts/dune_rise/Dune_Rise.ttf') format('truetype');
+  /* Path to font files */
+  font-weight: normal;  /* Specify the font's weight */
+  font-style: normal;  /* Specify the font's style */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.content{
-    /*margin-top: 40px;*/
-    position:absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-}
-
-/*.ensino {
-    position: relative;
-    background-color: #fff;
-    
-}
-
-.texto{
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 1;
-}*/
-
-.content h1{
-align-items: center;
-margin-top: 20px;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-/*.content .btnn{
-    margin-left: 450px;
-
-}*/
-
-.content .link{
-    margin-top: 40px;
-    
-}
-.content .link a{
-    /*padding-right: 50px;
-    margin-top: 10px;*/
-    color: blue;
-    transition: 0.4s ease-in-out;
-    cursor: pointer;
-}
-
-.content .link a:hover{
-    color: #3b043f;
-}
-
-.btnn{
-
-    
-    background-color: black;
-    
-    width: 240px;
-    height: 80px;
-    border-radius: 15px;
-    font-size: large;
-    margin: 0 15px;
-    margin-top: 60px;
-    /*position: relative;*/
-    
-
-}
-
-.btnn a{
-
-        text-decoration: none;
-        color:#f4f1f1;
-        font-weight: bolder;
-        font-family: 'Arial Narrow Bold';
-        /*position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 1;*/
-}
-
-
-
-/*.content img{
-    
-    /*width: 900px;
-    height: 600px;
-    background-color:#fff;
-    
-    margin: 0%;
-    padding: 0%;
-    height: 300px;
-    width: auto;
-    margin-top: 55px;
-    
-    
-}*/
