@@ -1,0 +1,51 @@
+* {
+    margin: 0 auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#presentation {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    background: rgb(64,9,120);
+    background: linear-gradient(90deg, rgba(64,9,120,1) 0%, rgba(67,10,125,1) 22%, rgba(45,5,121,1) 54%, rgba(9,0,117,1) 100%);
+}
+
+#presentation #animation{
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    z-index: 0;
+}
+
+#presentation #title {
+    font-family: dune_rise;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+
+@media screen and (max-width: 768px) {
+    #presentation #animation{
+        width: 60%;
+        height: 30%;
+        position: absolute;
+        z-index: 0;
+    }
+    
+    #presentation #title {
+        font-size: 1rem;
+    }
+}

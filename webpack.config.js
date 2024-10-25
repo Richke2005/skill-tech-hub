@@ -4,6 +4,6 @@ module.exports = {
   entry: './src/js/page_actions/catalogoCursos.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'catalogoBundle.js',
   },
 };

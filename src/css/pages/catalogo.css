@@ -1,6 +1,13 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 #areas {
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
 }
 
 .area {
@@ -8,11 +15,14 @@
     display: inline-block;
     margin: 10px;
     padding: 10px;
+    color: white;
+    background-color: rgb(57, 0, 131);
     box-shadow: rgba(0, 0, 0, .1) 0px 0px 15px 0px;
     border-radius: 10px;
 }
 
 .area .titleView {
+    font-family: lemon_milk;
     padding: 5px;
 }
 

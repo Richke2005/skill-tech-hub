@@ -28,10 +28,18 @@ function renderCatalog(div, data){
         areaDiv.appendChild(curseView);
 
         curses.forEach(curse => {
-            const curseDiv = document.createElement('div');
-            curseDiv.className = 'curse';
-            curseDiv.innerHTML = `<h3>${curse.title}</h3> <p>${curse.desc}</p>`;
-            curseView.appendChild(curseDiv);
+            const curseCard = document.createElement('div');
+            curseCard.className = 'card';
+            curseCard.style = 'width: 18rem; margin: 10px;';
+            curseCard.innerHTML = "<img src='../../../public/images/industrial_robots.jpeg' class='card-img-top' alt='...'>";
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+            cardBody.style = 'font-family: lemon_milk;';
+            cardBody.innerHTML = `<h5 class="card-title">${curse.title}</h5>
+            <p class="card-text">${curse.desc}</p>
+            <a href="" class="btn btn-outline-dark">Go somewhere</a>`;
+            curseView.appendChild(curseCard);
+            curseCard.appendChild(cardBody);
         });
     });
 }
