@@ -248,17 +248,44 @@ margin-top: 20px;
     margin-top: 75px;
     /*text-align: left;
     /*justify-content: space-between;*/
-    
+
+    flex-direction: column;
+    gap: 10px;
 }
 
 .form input {
     letter-spacing: 1px;
     margin: 8px;
+    width: 200px; /* Largura consistente para os inputs */
+    border-width: 2px; /* Aumenta a espessura da borda */
+    border-style: solid; /* Define o estilo da borda */
+    border-color: #000; /* Altere a cor da borda se necessário */
+    border-radius: 5px; /* Adicione bordas arredondadas, se desejar */
 }
+
+
+.form label {
+    width: 100px; /* Defina uma largura fixa para os labels */
+    text-align: right;
+    margin-right: 10px;
+}
+
+.coluna-1, .coluna-2 {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.alinhamento {
+    text-align: right;
+    margin-right: 1vw;
+}
+
 
 
 .coluna-1{
     width: 20%;
+    height:20%;
 
     }
     
