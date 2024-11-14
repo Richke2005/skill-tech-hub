@@ -14,6 +14,18 @@ header {
     background-color: transparent;
 }
 
+header #logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: dune_rise;
+}
+
+header #logo a{
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
 #menu {
     display: flex;
 }
@@ -43,6 +55,12 @@ header {
     cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+    .loginContent{
+        flex-direction: column;
+    }
+}
+
 .content {
     width: 100vw;
     height: 100vh;
@@ -60,4 +78,39 @@ header {
     font-family: dune_rise;
     font-size: 2rem;
     color: aliceblue;
+}
+
+.loginContent{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formLogin{
+    width: 50%;
+    height: 80%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.formTitle{
+    text-align: center;
+    color: #f4f4f4;
+    font-family: dune_rise;
+    font-size: 2rem;
+}
+
+.formLogin .input{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: transparent;
 }

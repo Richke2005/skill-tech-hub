@@ -7,7 +7,6 @@ const curseService = new CurseService();
 window.onload = async () => {
     const data = await areaService.getCursesByArea();
     const div = document.getElementById('areas');
-    console.log(data);
     renderCatalog(div, data);
 }
 

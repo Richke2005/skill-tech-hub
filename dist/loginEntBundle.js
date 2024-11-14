@@ -9,33 +9,23 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/page_actions/catalogoCursos.js":
-/*!***********************************************!*\
-  !*** ./src/js/page_actions/catalogoCursos.js ***!
-  \***********************************************/
+/***/ "./src/js/page_actions/loginEnterprise.js":
+/*!************************************************!*\
+  !*** ./src/js/page_actions/loginEnterprise.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const AreaService = __webpack_require__(/*! ../services/areaServices.js */ \"./src/js/services/areaServices.js\");\nconst CurseService = __webpack_require__(/*! ../services/curseServices.js */ \"./src/js/services/curseServices.js\");\n\nconst areaService = new AreaService();\nconst curseService = new CurseService();\n\nwindow.onload = async () => {\n    const data = await areaService.getCursesByArea();\n    const div = document.getElementById('areas');\n    renderCatalog(div, data);\n}\n\nfunction renderCatalog(div, data){\n    div.innerHTML = '';\n    data.forEach(element => {\n        const curses = element.curses;\n        const areaDiv = document.createElement('div');\n        areaDiv.className = 'area';\n        const titleDiv = document.createElement('div');\n        titleDiv.className = 'titleView';\n        const curseView = document.createElement('div');\n        curseView.className = 'curseView';\n\n        titleDiv.innerHTML = `<h2>${element.name}</h2> <p>${element.desc}</p>`;\n        div.appendChild(areaDiv);\n        areaDiv.appendChild(titleDiv);\n        areaDiv.appendChild(curseView);\n\n        curses.forEach(curse => {\n            const curseCard = document.createElement('div');\n            curseCard.className = 'card';\n            curseCard.style = 'width: 18rem; margin: 10px;';\n            curseCard.innerHTML = \"<img src='../../../public/images/industrial_robots.jpeg' class='card-img-top' alt='...'>\";\n            const cardBody = document.createElement('div');\n            cardBody.className = 'card-body';\n            cardBody.style = 'font-family: lemon_milk;';\n            cardBody.innerHTML = `<h5 class=\"card-title\">${curse.title}</h5>\n            <p class=\"card-text\">${curse.desc}</p>\n            <a href=\"\" class=\"btn btn-outline-dark\">Go somewhere</a>`;\n            curseView.appendChild(curseCard);\n            curseCard.appendChild(cardBody);\n        });\n    });\n}\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/page_actions/catalogoCursos.js?");
+eval("const EnterpriseService = __webpack_require__(/*! ../services/enterpriseServices */ \"./src/js/services/enterpriseServices.js\");\n\nconst enterpriseService = new EnterpriseService();\n\nconst email = document.getElementById('email');\nconst password = document.getElementById('password');\nconst button = document.getElementById('loginButton');\n\n\nbutton.addEventListener('click', async ()=>{\n    const emailText = email.value;\n    const passwordText = password.value;\n\n    const userData = await enterpriseService.getAllData();\n    if(userData.length != 0){\n        if(userData[0].email == emailText && userData[0].password == passwordText){\n            window.location.href = \"http://localhost:5500/src/pages/catalogo.html\";\n        }else{\n            window.alert(\"User not finded\");\n        }\n    }else{\n        window.alert(\"User not finded\");\n    }\n});\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/page_actions/loginEnterprise.js?");
 
 /***/ }),
 
-/***/ "./src/js/services/areaServices.js":
-/*!*****************************************!*\
-  !*** ./src/js/services/areaServices.js ***!
-  \*****************************************/
+/***/ "./src/js/services/enterpriseServices.js":
+/*!***********************************************!*\
+  !*** ./src/js/services/enterpriseServices.js ***!
+  \***********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const Service = __webpack_require__(/*! ./service */ \"./src/js/services/service.js\");\n\nclass AreaService extends Service{\n    constructor(){\n        super('areas');\n    }\n\n    async getCursesByArea(){\n        const response = await fetch(`${this.url}/curses`, {\n            method: 'GET',\n            headers: {\n                'Content-Type': 'application/json',\n            },\n            mode: 'cors'\n        });\n        return response.json();\n    }\n}\n\nmodule.exports = AreaService;\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/services/areaServices.js?");
-
-/***/ }),
-
-/***/ "./src/js/services/curseServices.js":
-/*!******************************************!*\
-  !*** ./src/js/services/curseServices.js ***!
-  \******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("const Service = __webpack_require__(/*! ./service */ \"./src/js/services/service.js\");\n\nclass CurseService extends Service{\n    constructor(){\n        super('curses');\n    }\n}\n\nmodule.exports = CurseService;\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/services/curseServices.js?");
+eval("const Service = __webpack_require__(/*! ./service */ \"./src/js/services/service.js\");\n\nclass EnterpriseService extends Service{\n    constructor(){\n        super('enterprises');\n    }\n}\n\nmodule.exports = EnterpriseService;\n\n//# sourceURL=webpack://skill-tech-hub/./src/js/services/enterpriseServices.js?");
 
 /***/ }),
 
@@ -80,7 +70,7 @@ eval("class Service {\r\n    #entity;\r\n    url;\r\n\r\n    /**\r\n     * Const
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/page_actions/catalogoCursos.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/page_actions/loginEnterprise.js");
 /******/ 	
 /******/ })()
 ;
