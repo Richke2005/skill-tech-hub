@@ -1,4 +1,4 @@
-# Nome do meu projeto
+# Sistema de Ensino Indústrial
 
 Rápida descrição do objetivo de fazer esse projeto
 
