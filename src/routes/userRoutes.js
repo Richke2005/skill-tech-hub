@@ -7,6 +7,7 @@ const userController = new UserController();
 router
 .post("/skilltech/api/v1/users", (req, res) => userController.post(req, res))
 .get("/skilltech/api/v1/users", (req, res) => userController.getAll(req, res))
+.get("/skilltech/api/v1/users/search", (req, res) => userController.getBySearch(req, res))
 .get("/skilltech/api/v1/users/:id", (req, res) => userController.getById(req, res))
 .put("/skilltech/api/v1/users/:id", (req, res) => userController.update(req, res))
 .delete("/skilltech/api/v1/users/:id", (req, res) => userController.delete(req, res));
