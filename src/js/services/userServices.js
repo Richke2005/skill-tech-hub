@@ -6,7 +6,7 @@ class UserService extends Service{
     }
 
     async getUserByAuth(email){
-        const response = await fetch(`${this.url}/users/search?email=${email}`, {
+        const response = await fetch(`${this.url}/search?email=${email}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

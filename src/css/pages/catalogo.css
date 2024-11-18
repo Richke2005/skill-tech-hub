@@ -6,8 +6,8 @@ body{
 }
 
 #areas {
-    margin: 0 auto;
-    width: 100%;
+    margin-left: 100px;
+    width: 90%;
 }
 
 .area {
