@@ -33,6 +33,18 @@ class CurseController extends Controller{
             return res.status(500).send({error: err.message});
         }
     }
+
+    async getRecentCurses(req, res){
+        try{
+            const result = await curseService.searchRecentCurses();
+            if(result.length == 0)
+                return res.status(404).send({message: "No results found"});
+
+            return res.status(200).send(result);
+        }catch(err){
+            return res.status(500).send({error: err.message});
+        }
+    }
 }
 
 module.exports = CurseController;

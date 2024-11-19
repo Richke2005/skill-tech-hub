@@ -46,6 +46,24 @@ class CurseService extends Service{
             }
         ])
     }
+
+    async searchRecentCurses(){
+        return super.getRegByAggregation([
+            {
+                $sort: {
+                    createdAt: -1
+                }
+            },
+            {
+                $limit: 4
+            },
+            {
+                $project: {
+                    modules: 0
+                }
+            }
+        ]);
+    }
 }
 
 module.exports = CurseService;

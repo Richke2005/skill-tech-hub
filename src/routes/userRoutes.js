@@ -9,6 +9,7 @@ router
 .get("/skilltech/api/v1/users", (req, res) => userController.getAll(req, res))
 .get("/skilltech/api/v1/users/search", (req, res) => userController.getBySearch(req, res))
 .get("/skilltech/api/v1/users/:id", (req, res) => userController.getById(req, res))
+.get("/skilltech/api/v1/users/:id/curses", (req, res) => userController.getCursesByUserId(req, res))
 .put("/skilltech/api/v1/users/:id", (req, res) => userController.update(req, res))
 .delete("/skilltech/api/v1/users/:id", (req, res) => userController.delete(req, res));
 

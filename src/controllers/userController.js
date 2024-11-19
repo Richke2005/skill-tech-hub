@@ -8,10 +8,10 @@ class UserController extends Controller{
         super(userService);
     }
 
-    async getBySearch(req, res){
+    async getUsersBySearch(req, res){
         try{
             const query = req.query;
-            const data = await userService.getUsersBySearch(query);
+            const data = await userService.searchUsersBySearch(query);
             if(data.length === 0) 
                 return res.status(404).send({message: "No user found"});
             return res.status(200).send(data);
@@ -19,6 +19,18 @@ class UserController extends Controller{
             return res.status(400).send({message: err.message});
         }
      
+    }
+
+    async getCursesByUserId(req, res){
+        try{
+            const userId = req.params.id;
+            const data = await userService.searchCursesByUserId(userId);
+            if(data.length === 0) 
+                return res.status(404).send({message: "No User founded with this Id"});
+            return res.status(200).send(data);
+        }catch(err){
+            return res.status(400).send({message: err.message});
+        }
     }
 }
 
