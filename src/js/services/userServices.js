@@ -15,6 +15,17 @@ class UserService extends Service{
         });
         return response.json();
     }
+
+    async getUserCurses(id){
+        const response = await fetch(`${this.url}/${id}/curses`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors'
+        });
+        return response.json();
+    }
 }
 
 module.exports = UserService;

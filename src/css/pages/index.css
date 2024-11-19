@@ -1,5 +1,5 @@
 * {
-    margin: 0 auto;
+    margin: 0;
 }
 
 body {
@@ -10,7 +10,7 @@ body {
     overflow-x: hidden;
 }
 
-#presentation {
+#presentation1 {
     width: 100vw;
     height: 90vh;
     display: flex;
@@ -21,14 +21,14 @@ body {
     background: linear-gradient(90deg, rgba(64,9,120,1) 0%, rgba(67,10,125,1) 22%, rgba(45,5,121,1) 54%, rgba(9,0,117,1) 100%);
 }
 
-#presentation #animation{
+#presentation1 #animation{
     width: 30%;
     height: 40%;
     position: absolute;
     z-index: 0;
 }
 
-#presentation #title {
+#presentation1 #title {
     font-family: dune_rise;
     text-transform: uppercase;
     color: #fff;
@@ -38,14 +38,39 @@ body {
 
 
 @media screen and (max-width: 768px) {
-    #presentation #animation{
+    #presentation1 #animation{
         width: 60%;
         height: 30%;
         position: absolute;
         z-index: 0;
     }
     
-    #presentation #title {
+    #presentation1 #title {
         font-size: 1rem;
     }
+
+    #presentation2 {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background: rgb(64,9,120);
+        background: linear-gradient(90deg, rgba(64,9,120,1) 0%, rgba(67,10,125,1) 22%, rgba(45,5,121,1) 54%, rgba(9,0,117,1) 100%);
+    }
+    
 }
+
+#presentation2 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(64,9,120);
+    background: linear-gradient(90deg, rgba(64,9,120,1) 0%, rgba(67,10,125,1) 22%, rgba(45,5,121,1) 54%, rgba(9,0,117,1) 100%);
+}
+
+
