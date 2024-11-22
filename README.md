@@ -1,10 +1,10 @@
-# Nome do meu projeto
+# API Restfull Skilltech-hub
 
 Rápida descrição do objetivo de fazer esse projeto
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
-| :sparkles: Nome        | **Titulo do meu projeto**
+| :sparkles: Nome        | **API Skilltech-hub**
 | :label: Tecnologias | node.js, express, mongoose html e css (tecnologias utilizadas)
 | :rocket: URL         | https://url-deploy.com.br
 | :fire: Desafio     | https://url-do-desafio.com.br
