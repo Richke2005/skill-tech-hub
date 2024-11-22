@@ -1,6 +1,16 @@
 # Sistema de Ensino Indústrial
 
-Rápida descrição do objetivo de fazer esse projeto
+# Sistema de Ensino Indústrial
+
+A plataforma visa capacitar profissionais para o ambiente industrial, reduzindo manutenções desnecessárias e aumentando a eficiência e segurança no trabalho.
+
+| :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **Skill Tech Hub**
+| :label: Tecnologias | HTML, CSS e JavaScript (tecnologias utilizadas)
+| :rocket: URL         | https://url-deploy.com.br
+| :fire: Desafio     | https://url-do-desafio.com.br
+
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
@@ -13,6 +23,9 @@ Rápida descrição do objetivo de fazer esse projeto
 ![](https://lh3.googleusercontent.com/pw/AP1GczMfb_yNCJdDsiKKQeRESIsYy3T3OA0nX55WGOkeUuViY7OoMj3wWAW-u-qf0xx-oX2F-Pd0MNNSsWbJse_gyUSaCASRryFEQbPfviCZi5JfKJ5rVHcgofejVqkgnnoyDJrrZmeGLn9KaAjbkclu-xofBw=w1803-h927-s-no-gm?authuser=1#vitrinedev)
 
 ## Detalhes do projeto
+
+A plataforma de treinamento industrial é um sistema virtual de aprendizado que tem como objetivo capacitar profissionais para atuarem em ambientes industriais. Através dela, é possível simular situações reais de trabalho, proporcionando um treinamento mais eficaz e seguro para seus colaboradores. A plataforma é composta por uma interface interativa e intuitiva, que permite aos usuários vivenciarem diferentes cenários e desafios. Ela também conta com conteúdo teóricos e práticos, além de recursos audiovisuais que auxiliam no aprendizado.
+
 
 
 ## Pré-requisitos
