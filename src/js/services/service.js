@@ -8,7 +8,7 @@ class Service {
      */
     constructor(entity) {
         this.#entity = entity;
-        this.url = `http://192.168.0.10:3001/skilltech/api/v1/${this.#entity}`;
+        this.url = `http://127.0.0.1:3001/skilltech/api/v1/${this.#entity}`;
     }
 
     /**

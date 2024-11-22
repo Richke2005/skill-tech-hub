@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/js/animations/sliderEffect.js',
+  entry: './src/js/page_actions/loginEnterprise.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'indexBundle.js',
+    filename: 'loginEntBundle.js',
   },
 };

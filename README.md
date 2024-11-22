@@ -18,9 +18,52 @@ Rápida descrição do objetivo de fazer esse projeto
 ## Pré-requisitos
 - Node.js instalado (versão 14 ou superior recomendada).
 - npm instalado (vem junto com o Node.js).
-- MongoDB instalado (ou um serviço como o MongoDB Atlas).
+- plugin do live server ou similar instalado em sua máquina
+- git instalado em sua máquina
 
-### Passos para Rodar a API RESTful
+### Estrutura do Projeto
+
+```
+.env
+.gitignore
+.hintrc
+LICENSE
+[package.json](http://_vscodecontentref_/0)
+public/
+    fonts/
+        dune_rise/
+            Dune_Rise.otf
+            ...
+        good_times/
+        lemon_milk/
+        nasalization/
+    images/
+[README.md](http://_vscodecontentref_/1)
+src/
+    css/
+        components/
+        fonts/
+        pages/
+    index.html
+    js/
+        animations/
+        page_actions/
+        services/
+    pages/
+        cadastro_empresa.html
+        cadastro_funcionario.html
+        catalogo.html
+        curse_page.html
+        historico_cursos.html
+        historico_funcionarios.html
+        home.html
+        login_empresa.html
+        login_funcionario.html
+        perfil.html
+[webpack.config.js](http://_vscodecontentref_/2)
+```
+
+### Passos para Rodar o Site
 
 1. **Clonar o repositório**
 
@@ -39,45 +82,11 @@ Rápida descrição do objetivo de fazer esse projeto
    npm install
    ```
 
-3. **Configurar variáveis de ambiente (se aplicável)**
+3. **Rodar o servidor**
+   Se o live server estiver instalado, clique em "Go Live" no canto inferior direito da tela do Visual Studio Code.
 
-   Se o projeto usa variáveis de ambiente (por exemplo, para o MongoDB URI), crie um arquivo `.env` com base no arquivo de exemplo `.env.example`:
-
-   ```bash
-   cp .env.example .env
-   ```
-
-   Atualize o arquivo `.env` com as informações corretas, como a URI do MongoDB:
-
-   ```
-   MONGO_URI=mongodb://localhost:27017/minha-api
-   PORT=3001
-   ```
-
-4. **Rodar o servidor**
-
-   Se o Nodemon estiver configurado como dependência de desenvolvimento, você pode iniciar o servidor com o seguinte comando:
+   Alternativamente, você pode usar qualquer outro servidor local para servir os arquivos estáticos. Por exemplo, usando o `http-server`:
 
    ```bash
-   npm run dev
+   npx http-server ./src
    ```
-
-   Ou, se não estiver usando Nodemon:
-
-   ```bash
-   node server.js
-   ```
-
-5. **Acessar a API**
-
-   Agora a API estará disponível em: `http://localhost:<PORT>`. O valor padrão da `PORT` é `3001`, se não houver sido modificado.
-
-   Exemplo para acessar a rota de itens:
-
-   ```
-   GET http://localhost:3001/api/items
-   ```
-
-### MongoDB
-
-Certifique-se de que o MongoDB está rodando localmente ou configure o arquivo `.env` com a URI correta para um servidor remoto, como o MongoDB Atlas.
