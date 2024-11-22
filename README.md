@@ -24,7 +24,6 @@ Rápida descrição do objetivo de fazer esse projeto
 ### Estrutura do Projeto
 
 ```
-.env
 .gitignore
 .hintrc
 LICENSE
