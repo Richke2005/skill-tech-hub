@@ -1,7 +1,5 @@
 # Sistema de Ensino Indústrial
 
-# Sistema de Ensino Indústrial
-
 A plataforma visa capacitar profissionais para o ambiente industrial, reduzindo manutenções desnecessárias e aumentando a eficiência e segurança no trabalho.
 
 | :placard: Vitrine.Dev |     |
