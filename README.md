@@ -9,14 +9,6 @@ A plataforma visa capacitar profissionais para o ambiente industrial, reduzindo 
 | :rocket: URL         | https://url-deploy.com.br
 | :fire: Desafio     | https://url-do-desafio.com.br
 
-
-| :placard: Vitrine.Dev |     |
-| -------------  | --- |
-| :sparkles: Nome        | **Skill Tech Hub**
-| :label: Tecnologias | HTML, css e javascript (tecnologias utilizadas)
-| :rocket: URL         | https://url-deploy.com.br
-| :fire: Desafio     | https://url-do-desafio.com.br
-
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
 ![](https://lh3.googleusercontent.com/pw/AP1GczMfb_yNCJdDsiKKQeRESIsYy3T3OA0nX55WGOkeUuViY7OoMj3wWAW-u-qf0xx-oX2F-Pd0MNNSsWbJse_gyUSaCASRryFEQbPfviCZi5JfKJ5rVHcgofejVqkgnnoyDJrrZmeGLn9KaAjbkclu-xofBw=w1803-h927-s-no-gm?authuser=1#vitrinedev)
 
