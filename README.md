@@ -82,6 +82,7 @@ src/
    ```
 
 3. **Rodar o servidor**
+
    Se o live server estiver instalado, clique em "Go Live" no canto inferior direito da tela do Visual Studio Code.
 
    Alternativamente, você pode usar qualquer outro servidor local para servir os arquivos estáticos. Por exemplo, usando o `http-server`:
