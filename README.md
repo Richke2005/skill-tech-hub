@@ -47,11 +47,12 @@ Rápida descrição do objetivo de fazer esse projeto
    cp .env.example .env
    ```
 
-   Atualize o arquivo `.env` com as informações corretas, como a URI do MongoDB:
+   Atualize o arquivo `.env` com as informações corretas, como a senha e usuário do MongoDB:
 
    ```
-   MONGO_URI=mongodb://localhost:27017/minha-api
    PORT=3001
+   DB_USER="userx"
+   DB_PASSWORD="*************"
    ```
 
 4. **Rodar o servidor**
