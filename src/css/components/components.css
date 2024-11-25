@@ -1,5 +1,6 @@
 .page-content {
     background: rgb(64,9,120);
+    margin: 0;
     background: linear-gradient(90deg, rgba(64,9,120,1) 0%, rgba(67,10,125,1) 22%, rgba(45,5,121,1) 54%, rgba(9,0,117,1) 100%);
 }
 

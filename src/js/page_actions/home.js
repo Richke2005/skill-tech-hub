@@ -10,7 +10,7 @@ const myCursesContainer = document.querySelector('.active-courses');
 window.onload = async () => {
     try{
     const data = await curseService.getCursesLimiting();
-    const user = await userService.getUserCurses("66f7602a19a0381d5274083a");
+    const user = await userService.getUserCurses(getUrlParameter('id'));
    
     renderNews(slideContainer, data);
     renderMyCurses(myCursesContainer, user[0].curses);
@@ -53,3 +53,9 @@ function renderMyCurses(father, myCurses){
         father.appendChild(curseCard);
     });
 }
+
+function getUrlParameter(name) { 
+    const urlParams = new URLSearchParams(window.location.search); 
+    return urlParams.get(name); 
+} 
+ 
