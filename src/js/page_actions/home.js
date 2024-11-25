@@ -11,7 +11,10 @@ window.onload = async () => {
     try{
     const data = await curseService.getCursesLimiting();
     const user = await userService.getUserCurses(getUrlParameter('id'));
-   
+    const user_id = sessionStorage.getItem('user_id');
+    if( !user_id || user_id == "null"){
+        sessionStorage.setItem('user_id', getUrlParameter('id'));
+    }
     renderNews(slideContainer, data);
     renderMyCurses(myCursesContainer, user[0].curses);
     }catch(error){
