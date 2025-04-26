@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/components/components.css">
+    
+    <link rel="stylesheet" href="../css/fonts/fonts.css">
+    <link rel="stylesheet" href="../css/components/sidebar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+    <title>Curso de Robótica - Descrição</title>
+    <style>
+        body{
+            font-family: lemon_milk;
+            color: white;
+            /*background-color: rgb(57, 0, 131);*/
+            margin: 0;
+            padding: 0;
+            display: flex;
+            
+            min-height: 100vh;
+           
+            flex-direction: column;
+            /*overflow-y: auto;permite rolagem vertical */
+            
+        }
+        
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+         
+          
+          
+          overflow-y: auto;
+
+        }
+
+
+
+
+        /*.sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+        }*/
+
+        .content {
+            flex: 1;
+            padding: 110px;
+            display: flex;
+            flex-direction: column;
+        }
+
+      
+        .module {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 10px;
+            
+            min-width: 981.6px;
+            max-width: 981.6px;
+        }
+        
+        
+        .module h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .module p {
+            color: #666;
+            line-height: 1.6;
+            
+        }
+        .module-image {
+        width: 100px; /* Ajuste a largura conforme necessário */
+        height: auto;
+        float: right;
+        margin-left: 10px; /* Espaço entre o parágrafo e a imagem */
+        }
+
+        .conteudo-modulo {
+        display: none; /* Oculta o conteúdo das aulas inicialmente */
+        padding: 15px; /* Opcional: Adiciona um espaçamento interno */
+        background-color: #f9f9f9; /* Opcional: Cor de fundo para a área de aulas */
+        border-radius: 0 0 8px 8px; /* Opcional: Bordas inferiores arredondadas */
+        margin-top: 10px; /* Opcional: Espaço entre o módulo e o conteúdo das aulas */
+        display: none;
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+    }
+
+          .aula {
+        margin-bottom: 30px;
+      }
+
+      .titulo-aula {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <!-- Sidebar header -->
+        <header class="sidebar-header">
+          <a href="./perfil.html" class="header-logo">
+            <img src="../../public/images/industrial_robots.jpeg" alt="CodingNepal">
+          </a>
+          <button class="toggler sidebar-toggler">
+            <span class="material-symbols-rounded">chevron_left</span>
+          </button>
+          <button class="toggler menu-toggler">
+            <span class="material-symbols-rounded">menu</span>
+          </button>
+        </header>
+    
+        <nav class="sidebar-nav">
+          <!-- Primary top nav -->
+          <ul class="nav-list primary-nav">
+            <li class="nav-item">
+              <a href="./home.html" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">home</span>
+                <span class="nav-label">Home</span>
+              </a>
+              <span class="nav-tooltip">Home</span>
+            </li>
+            <li class="nav-item">
+              <a href="./catalogo.html" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">dashboard</span>
+                <span class="nav-label">Catálogo</span>
+              </a>
+              <span class="nav-tooltip">Catálogo</span>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">notifications</span>
+                <span class="nav-label">Notifications</span>
+              </a>
+              <span class="nav-tooltip">Notifications</span>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">group</span>
+                <span class="nav-label">Team</span>
+              </a>
+              <span class="nav-tooltip">Team</span>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">insert_chart</span>
+                <span class="nav-label">Analytics</span>
+              </a>
+              <span class="nav-tooltip">Analytics</span>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">star</span>
+                <span class="nav-label">Favoritos</span>
+              </a>
+              <span class="nav-tooltip">Favoritos</span>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">settings</span>
+                <span class="nav-label">Settings</span>
+              </a>
+              <span class="nav-tooltip">Settings</span>
+            </li>
+          </ul>
+    
+          <!-- Secondary bottom nav -->
+          <ul class="nav-list secondary-nav">
+            <li class="nav-item">
+              <a href="./perfil.html" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">account_circle</span>
+                <span class="nav-label">Profile</span>
+              </a>
+              <span class="nav-tooltip">Profile</span>
+            </li>
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">logout</span>
+                <span class="nav-label">Logout</span>
+              </a>
+              <span class="nav-tooltip">Logout</span>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+    <div class="content">
+        <h1>Curso de Robótica</h1>
+
+      <div class="module" id="modulo1">
+          <h2>Introdução à Robótica</h2>
+            <p>Neste módulo, você aprenderá os conceitos básicos de robótica, desde a história e evolução dos robôs até os princípios de funcionamento e aplicações em diversas áreas.</p>
+         <!--<img src="/public/images/introducaoarobotica.jpeg" alt="Robô 1" class="module-image">-->
+         <div class="conteudo-modulo" id="conteudo1">
+          <div class="aula">
+              <h3 class="titulo-aula">Aula 1: Conceitos Básicos</h3>
+              <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/29zvPVPKFtI?si=AM0BqWul8kUakxI_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+          </div>
+          <div class="aula">
+              <h3 class="titulo-aula">Aula 2: História da Robótica</h3>
+              <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/X3dV-ETV4a8?si=ZiGRzl88e0izjY4C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+          </div>
+          <div class="aula">
+            <h3 class="titulo-aula">Aula 3: Robótica no Cotidiano</h3>
+            <div class="video-container">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/rzNAzt5I56A?si=8YumqV2TYNedvAfT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+
+      </div>
+      </div>
+        
+             
+      <div class="module" id="modulo2">
+            <h2>Programação de Robôs</h2>
+            <p>Aprenda a programar robôs utilizando diferentes linguagens e ferramentas, desde a programação em blocos para iniciantes até a programação em código para robôs mais avançados.</p>
+            <!--<img src="/public/images/programacao_de_robos-pahc_automacao - Copia.webp" alt="Robô 1" class="module-image">-->
+            <div class="conteudo-modulo" id="conteudo1">
+              <div class="aula">
+                  <h3 class="titulo-aula">Aula 1: Programação de Robôs</h3>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/biTrWKB3rJo?si=eW1dZ2d3F4BExsNf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="aula">
+                  <h3 class="titulo-aula">Aula 2: Programação de Robôs II</h3>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qmJjDcwt6hM?si=VAxtOc9ACahNL5PJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="aula">
+                <h3 class="titulo-aula">Aula 3: Robôs Autônomos</h3>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/O9KapBRm9zY?si=FEnMAYY192SDNCc2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+              </div>
+      </div>
+
+      <div class="module" id="modulo3">
+            <h2>Sensores e Atuadores</h2>
+            <p>Explore o mundo dos sensores e atuadores, os componentes que permitem aos robôs interagir com o ambiente. Aprenda a utilizar diferentes tipos de sensores e atuadores em seus projetos.</p>
+          <!--<img src="/public/images/sensoreseatuadores.jpg" alt="Robô 1" class="module-image">-->
+          <div class="conteudo-modulo" id="conteudo1">
+            <div class="aula">
+                <h3 class="titulo-aula">Aula 1: Atuadores na prática</h3>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/aoUCIIIiYmI?si=hsOzHJgGr64ntzJK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="aula">
+                <h3 class="titulo-aula">Aula 2: História da Robótica</h3>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SEU_ID_VIDEO_1B" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="aula">
+              <h3 class="titulo-aula">Aula 3: Integrando com Arduino</h3>
+              <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/j_ow0ItA7Ck?si=Asb5u7wsDLiPgeFz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+        </div>
+  
+      </div>
+      
+        <div class="module" id="modulo4">
+            <h2>Projetos Práticos</h2>
+            <p>Coloque em prática todo o conhecimento adquirido nos módulos anteriores desenvolvendo projetos práticos de robótica, desde robôs simples até robôs mais complexos com inteligência artificial.</p>
+          <!--<img src="/public/images/projetospraticos.webp" alt="Robô 1" class="module-image">-->
+          <div class="conteudo-modulo" id="conteudo1">
+            <div class="aula">
+                <h3 class="titulo-aula">Aula 1:  Projeto – Robô Seguidor de Linha</h3>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/8jOK-6dmTKE?si=2_XB2v2DZSTLjnO9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="aula">
+                <h3 class="titulo-aula">Aula 2:  Projeto – Robô Controlado por Bluetooth</h3>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/hUMBF5Fu-Ew?si=yOIomVyPCJ-sqnpJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="aula">
+              <h3 class="titulo-aula">Aula 3: Robôs com Inteligência Artificial</h3>
+              <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/x2B2a3SUraM?si=zjC66iidAwf-Dm-F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+    <script src="../js/animations/sidebarMov.js"></script>
+    <div class="background"></div>
+    <script>
+        // moduloscurso.html
+        const urlParams = new URLSearchParams(window.location.search);
+        const curseId = urlParams.get('id');
+
+        if (curseId) {
+            console.log(`ID do curso: ${curseId}`);
+            // Use curseId para buscar os detalhes do curso
+        } else {
+            console.log('ID do curso não encontrado.');
+        }
+    </script>
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+  const modules = document.querySelectorAll('.module');
+
+  modules.forEach(module => {
+    const header = module.querySelector('h2');
+    const conteudo = module.querySelector('.conteudo-modulo');
+
+    if (header) {
+      header.style.cursor = 'pointer';
+
+      header.addEventListener('click', () => {
+        if (conteudo) {
+          const isVisible = conteudo.style.display === 'block';
+          conteudo.style.display = isVisible ? 'none' : 'block';
+        } else {
+          console.log('Este módulo ainda não possui aulas.');
+          // Você pode exibir uma mensagem na tela se quiser.
+        }
+      });
+    }
+  });
+});
+
+    </script>
+
+</body>
+</html>
+
+Módulo 1: Fundamentos da Eletricidade
+Descrição:
+Neste módulo, você aprenderá os conceitos fundamentais da eletricidade, incluindo carga elétrica, corrente, tensão e resistência, que são a base para entender circuitos elétricos.
+
+Aulas:
+
+O que é Eletricidade? Carga, Corrente e Tensão
+
+Leis de Ohm e Kirchhoff
+
+Potência Elétrica e Energia
+
+Módulo 2: Componentes Elétricos
+Descrição:
+Explore os principais componentes utilizados em circuitos elétricos, suas funções e como eles interagem entre si para formar circuitos funcionais.
+
+Aulas:
+
+Resistores, Capacitores e Indutores
+
+Fontes de Alimentação e Interruptores
+
+Ferramentas de Medição: Multímetro e Osciloscópio
+
+Módulo 3: Análise de Circuitos
+Descrição:
+Aprenda a analisar circuitos elétricos simples e complexos usando métodos como análise nodal e malha, além de simulações.
+
+Aulas:
+
+Análise de Circuitos em Série e Paralelo
+
+Análise Nodal e de Malhas
+
+Simulação de Circuitos com Software (ex: Proteus ou Tinkercad)
+
+Módulo 4: Circuitos CA e CC
+Descrição:
+Entenda a diferença entre corrente alternada (CA) e corrente contínua (CC), e como cada uma é usada em diferentes aplicações.
+
+Aulas:
+
+Diferenças entre Corrente Alternada e Contínua
+
+Retificadores e Fontes de Alimentação
+
+Análise de Circuitos CA com Capacitores e Indutores
+
+Módulo 5: Segurança e Normas Elétricas
+Descrição:
+Aprenda as práticas de segurança ao trabalhar com eletricidade e conheça as principais normas técnicas aplicadas.
+
+Aulas:
+
+Equipamentos de Proteção Individual (EPIs)
+
+Normas ABNT e NBR aplicadas à Eletricidade
+
+Procedimentos de Segurança em Manutenção Elétrica

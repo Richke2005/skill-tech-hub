@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/components/components.css">
+    
+    <link rel="stylesheet" href="../css/fonts/fonts.css">
+    <link rel="stylesheet" href="../css/components/sidebar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+    <title>Curso de CLP Schneider - Descrição</title>
+    <style>
+        body{
+            font-family: lemon_milk;
+            color: white;
+            /*background-color: rgb(57, 0, 131);*/
+            margin: 0;
+            padding: 0;
+            display: flex;
+            
+            min-height: 100vh;
+           
+            flex-direction: column;
+            /*overflow-y: auto;permite rolagem vertical */
+            
+        }
+        
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+         
+          
+          
+          overflow-y: auto;
+
+        }
+
+
+
+
+        /*.sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+        }*/
+
+        .content {
+            flex: 1;
+            padding: 110px;
+            display: flex;
+            flex-direction: column;
+        }
+
+      
+        .module {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 10px;
+             /* altura fixa mínima igual a moduloscurso.html */
+            min-width: 981.6px;
+            max-width: 981.6px;
+            
+        }
+        
+        
+        .module h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .module p {
+            color: #666;
+            line-height: 1.6;
+            min-height: 60px;
+            
+        }
+        .module-image {
+        width: 100px; /* Ajuste a largura conforme necessário */
+        height: auto;
+        float: right;
+        margin-left: 10px; /* Espaço entre o parágrafo e a imagem */
+        }
+
+        .conteudo-modulo {
+        display: none; /* Oculta o conteúdo das aulas inicialmente */
+        padding: 15px; /* Opcional: Adiciona um espaçamento interno */
+        background-color: #f9f9f9; /* Opcional: Cor de fundo para a área de aulas */
+        border-radius: 0 0 8px 8px; /* Opcional: Bordas inferiores arredondadas */
+        margin-top: 10px; /* Opcional: Espaço entre o módulo e o conteúdo das aulas */
+        display: none;
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+    }
+
+          .aula {
+        margin-bottom: 30px;
+      }
+
+      .titulo-aula {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <!-- Sidebar header -->
+        <header class="sidebar-header">
+          <a href="./perfil.html" class="header-logo">
+            <img src="../../public/images/industrial_robots.jpeg" alt="CodingNepal">
+          </a>
+          <button class="toggler sidebar-toggler">
+            <span class="material-symbols-rounded">chevron_left</span>
+          </button>
+          <button class="toggler menu-toggler">
+            <span class="material-symbols-rounded">menu</span>
+          </button>
+        </header>
+    
+        <nav class="sidebar-nav">
+          <!-- Primary top nav -->
+          <ul class="nav-list primary-nav">
+            <li class="nav-item">
+              <a href="./home.html" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">home</span>
+                <span class="nav-label">Home</span>
+              </a>
+              <span class="nav-tooltip">Home</span>
+            </li>
+            <li class="nav-item">
+              <a href="./catalogo.html" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">dashboard</span>
+                <span class="nav-label">Catálogo</span>
+              </a>
+              <span class="nav-tooltip">Catálogo</span>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">notifications</span>
+                <span class="nav-label">Notifications</span>
+              </a>
+              <span class="nav-tooltip">Notifications</span>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">group</span>
+                <span class="nav-label">Team</span>
+              </a>
+              <span class="nav-tooltip">Team</span>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">insert_chart</span>
+                <span class="nav-label">Analytics</span>
+              </a>
+              <span class="nav-tooltip">Analytics</span>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">star</span>
+                <span class="nav-label">Favoritos</span>
+              </a>
+              <span class="nav-tooltip">Favoritos</span>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">settings</span>
+                <span class="nav-label">Settings</span>
+              </a>
+              <span class="nav-tooltip">Settings</span>
+            </li>
+          </ul>
+    
+          <!-- Secondary bottom nav -->
+          <ul class="nav-list secondary-nav">
+            <li class="nav-item">
+              <a href="./perfil.html" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">account_circle</span>
+                <span class="nav-label">Profile</span>
+              </a>
+              <span class="nav-tooltip">Profile</span>
+            </li>
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link">
+                <span class="nav-icon material-symbols-rounded">logout</span>
+                <span class="nav-label">Logout</span>
+              </a>
+              <span class="nav-tooltip">Logout</span>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+    <div class="content">
+        <h1>Curso de CLP Schneider</h1>
+
+      <div class="module" id="modulo1">
+          <h2>1. Introdução aos CLPs</h2>
+            <p>Entenda o que é um CLP, sua importância na automação industrial e os conceitos básicos de funcionamento dos controladores programáveis.</p>
+         <!--<img src="/public/images/introducaoarobotica.jpeg" alt="Robô 1" class="module-image">-->
+         <div class="conteudo-modulo" id="conteudo1">
+          <div class="aula">
+              <h3 class="titulo-aula">Aula 1: O que é um CLP?</h3>
+              <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/RnYqTpuLWAA?si=a6F1g1qICRW4aL0F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+          </div>
+          <div class="aula">
+              <h3 class="titulo-aula">Aula 2: Aplicações do CLP na Indústria</h3>
+              <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bTvO5eAk6P0?si=XKXYUg626sO4NbQG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+          </div>
+          <div class="aula">
+            <h3 class="titulo-aula">Aula 3: Arquitetura de um CLP</h3>
+            <div class="video-container">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/mtSmjHO1l-A?si=tCrfSOxMSKbPacq3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+
+      </div>
+      </div>
+        
+             
+      <div class="module" id="modulo2">
+            <h2>2. Programação Ladder</h2>
+            <p>Aprenda os princípios da linguagem Ladder e como utilizá-la para criar lógicas de controle simples e eficientes nos CLPs da Schneider.</p>
+            <!--<img src="/public/images/programacao_de_robos-pahc_automacao - Copia.webp" alt="Robô 1" class="module-image">-->
+            <div class="conteudo-modulo" id="conteudo1">
+              <div class="aula">
+                  <h3 class="titulo-aula">Aula 1: Introdução à Linguagem Ladder</h3>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/adwqdkC7yxA?si=Hx08E2ED5_AOqA2_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="aula">
+                  <h3 class="titulo-aula">Aula 2: Criando um Programa Simples</h3>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/yz5PVJn7S2Y?si=0fe-FPJ5pmepi6C0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="aula">
+                <h3 class="titulo-aula">Aula 3: Contadores e Temporizadores</h3>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/DNDeHHza_Uc?si=f1VvRtiXE65bbvqR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+              </div>
+      </div>
+
+      <div class="module" id="modulo3">
+            <h2>3. Softwares Schneider</h2>
+            <p>Explore o ambiente de desenvolvimento EcoStruxure Machine Expert, desde a instalação até a configuração de dispositivos e simulações.</p>
+          <!--<img src="/public/images/sensoreseatuadores.jpg" alt="Robô 1" class="module-image">-->
+          <div class="conteudo-modulo" id="conteudo1">
+            <div class="aula">
+                <h3 class="titulo-aula">Aula 1: Introdução ao EcoStruxure Machine Expert</h3>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/DaLyXalbfn0?si=xQr3eEKlwkNy1sWB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="aula">
+                <h3 class="titulo-aula">Aula 2: Instalação e Interface</h3>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/EyM1ukfzuJ4?si=ywWTf0Kva38e4ZZl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="aula">
+              <h3 class="titulo-aula">Aula 3: Comunicação com o CLP</h3>
+              <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/a-yE8pZMbng?si=B3nLnBa7z59w9NBp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+        </div>
+  
+      </div>
+      
+        <div class="module" id="modulo4">
+            <h2>4. Projetos Práticos</h2>
+            <p>Veja como integrar o CLP com sensores, atuadores, IHM e outros dispositivos industriais, utilizando protocolos de comunicação comuns.</p>
+          <!--<img src="/public/images/projetospraticos.webp" alt="Robô 1" class="module-image">-->
+          <div class="conteudo-modulo" id="conteudo1">
+            <div class="aula">
+                <h3 class="titulo-aula">Aula 1: Controle de Motor</h3>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/raxKNHUHZUg?si=oVW3SvD_o4HQsY7d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="aula">
+                <h3 class="titulo-aula">Aula 2: Sistema de Esteira</h3>
+                <div class="video-container">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/iLIU24fvhf8?si=dGSRqDVsok7WQ2Vz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="aula">
+              <h3 class="titulo-aula">Aula 3: Automação de Iluminação</h3>
+              <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vcqBWpFiVps?si=iW8OEIkgnoA622hR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+    <script src="../js/animations/sidebarMov.js"></script>
+    <div class="background"></div>
+    <script>
+        // moduloscurso.html
+        const urlParams = new URLSearchParams(window.location.search);
+        const curseId = urlParams.get('id');
+
+        if (curseId) {
+            console.log(`ID do curso: ${curseId}`);
+            // Use curseId para buscar os detalhes do curso
+        } else {
+            console.log('ID do curso não encontrado.');
+        }
+    </script>
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+  const modules = document.querySelectorAll('.module');
+
+  modules.forEach(module => {
+    const header = module.querySelector('h2');
+    const conteudo = module.querySelector('.conteudo-modulo');
+
+    if (header) {
+      header.style.cursor = 'pointer';
+
+      header.addEventListener('click', () => {
+        if (conteudo) {
+          const isVisible = conteudo.style.display === 'block';
+          conteudo.style.display = isVisible ? 'none' : 'block';
+        } else {
+          console.log('Este módulo ainda não possui aulas.');
+          // Você pode exibir uma mensagem na tela se quiser.
+        }
+      });
+    }
+  });
+});
+
+    </script>
+
+</body>
+</html>

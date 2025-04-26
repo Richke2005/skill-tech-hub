@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos do Curso</title>
+    <style>
+        .modulo {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .conteudo-modulo {
+            display: none;
+            padding: 10px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 para vídeos responsivos */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Módulos do Curso</h1>
+
+    <div class="modulo" onclick="toggleModulo('modulo1')">
+        <h3>Módulo 1: Introdução à Eletrônica Digital</h3>
+        <div class="conteudo-modulo" id="modulo1">
+            <div class="aula">
+                <h4>Aula 1: Conceitos Básicos</h4>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="aula">
+                <h4>Aula 2: Componentes Eletrônicos</h4>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modulo" onclick="toggleModulo('modulo2')">
+        <h3>Módulo 2: Circuitos Lógicos</h3>
+        <div class="conteudo-modulo" id="modulo2">
+            <div class="aula">
+                <h4>Aula 3: Portas Lógicas</h4>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="aula">
+                <h4>Aula 4: Álgebra Booleana</h4>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleModulo(id) {
+            const modulo = document.getElementById(id);
+            if (modulo.style.display === 'none') {
+                modulo.style.display = 'block';
+            } else {
+                modulo.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
