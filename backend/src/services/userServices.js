@@ -3,7 +3,7 @@ const { ObjectId } = require("mongoose").Types;
 
 class UserService extends Service{
     constructor(){
-        super("users");
+        super("User");
     }
 
     async searchUsersBySearch(query){

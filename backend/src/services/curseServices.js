@@ -3,7 +3,7 @@ const { ObjectId } = require("mongoose").Types;
 
 class CurseService extends Service{
     constructor(){
-        super("curses");
+        super("Curse");
     }
 
     async getCurseBySearch(query){

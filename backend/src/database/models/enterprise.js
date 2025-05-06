@@ -1,4 +1,49 @@
-const {Schema} = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const enterpriseSchema = new Schema({
+  name: String,
+  logo: String,
+  description: String,
+  social_midias: [{
+    name: String,
+    url: String
+  }]
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model('Enterprise', enterpriseSchema);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const { Schema} = require("mongoose");
 
 const enterpriseSchema = new Schema({
     name: {
@@ -22,4 +67,4 @@ const enterpriseSchema = new Schema({
     timestamps: true
 });
 
-module.exports = enterpriseSchema;
+module.exports = enterpriseSchema;*/

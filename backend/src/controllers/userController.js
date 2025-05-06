@@ -78,7 +78,7 @@ class UserController extends Controller{
 /*-----------------------------------------*/
 
     // Função para mudar a senha do usuário
-    async changePassword(req, res) {
+   /* async changePassword(req, res) {
         const { email, newPassword, confirmPassword } = req.body;
     
         if (!email || !newPassword || !confirmPassword) {
@@ -109,6 +109,10 @@ class UserController extends Controller{
     
     
       /*-----------------------------------------*/
+
+/*-----------------------------------------*/
+      
+    /*-----------------------------------------*/
 }
 
 

@@ -1,4 +1,55 @@
-const {Schema} = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const areaSchema = new Schema({
+  name: String,
+  description: String
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model('Area', areaSchema);
+/*const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const areaSchema = new Schema({
+  name: String,
+  description: String
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model('Area', areaSchema);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const { Schema} = require("mongoose");
 
 const areaSchema = new Schema({
     name: String,
@@ -8,4 +59,14 @@ const areaSchema = new Schema({
     timestamps: true
 });
 
-module.exports = areaSchema;
+module.exports = areaSchema;*/
+
+
+
+
+
+
+
+
+
+

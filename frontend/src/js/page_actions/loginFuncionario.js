@@ -1,4 +1,38 @@
-const UserService = require('../services/userServices');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const button = document.getElementById('loginButton');
+
+button.addEventListener('click', async () => {
+  const emailText = email.value;
+  const passwordText = password.value;
+
+  try {
+    const response = await fetch('http://localhost:3001/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: emailText,
+        password: passwordText
+      })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      // Redireciona se login for bem-sucedido
+      window.location.href = `http://localhost:5500/src/pages/home.html?id=${encodeURIComponent(data._id)}`;
+    } else {
+      alert(data.message || "Erro ao fazer login.");
+    }
+  } catch (err) {
+    console.error("Erro na requisição:", err);
+    alert("Erro de conexão com o servidor.");
+  }
+});
+
+/*const UserService = require('../services/userServices');
 const userService = new UserService();
 
 const email = document.getElementById('email');
@@ -24,4 +58,4 @@ button.addEventListener('click', async ()=>{
         window.alert("Connection error");
         console.error(error);
     });
-});
+});*/

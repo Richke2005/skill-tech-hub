@@ -3,7 +3,7 @@ const { ObjectId } = require("mongoose").Types;
 
 class EnterpriseService extends Service{
     constructor(){
-        super("enterprises");
+        super("Enterprise");
     }
 
     async getUsersByEnterpriseId(id){

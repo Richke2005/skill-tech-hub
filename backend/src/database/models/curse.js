@@ -1,4 +1,53 @@
-const {Schema} = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const curseSchema = new Schema({
+  title: String,
+  description: String,
+  thumbnail: String,
+  instructor: {
+    type: Schema.Types.ObjectId,
+    ref: 'Instructor'
+  },
+  area: {
+    type: Schema.Types.ObjectId,
+    ref: 'Area'
+  }
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model('Curse', curseSchema);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const { Schema} = require("mongoose");
 
 const curseSchema = new Schema({
     title: String,
@@ -33,4 +82,4 @@ const curseSchema = new Schema({
     timestamps: true
 });
 
-module.exports = curseSchema;
+module.exports = curseSchema;*/

@@ -2,7 +2,7 @@ const Service = require("./service.js");
 
 class AreaService extends Service{
     constructor(){
-        super("areas");
+        super("Area");
     }
 
     async getCursesByArea(){

@@ -1,4 +1,102 @@
-const {Schema} = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const instructorSchema = new Schema({
+  name: String,
+  img: String,
+  description: String,
+  linkedin: String
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model('Instructor', instructorSchema);
+/*const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const instructorSchema = new Schema({
+  name: String,
+  img: String,
+  description: String,
+  linkedin: String
+}, {
+  timestamps: true
+});
+
+// Exportando apenas o esquema para posterior uso no index.js
+module.exports = instructorSchema;*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const instructorSchema = new Schema({
+  name: String,
+  img: String,
+  description: String,
+  linkedin: String
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model('Instructor', instructorSchema);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const { Schema} = require("mongoose");
 
 const instructorSchema = new Schema({
     name: String,
@@ -20,4 +118,4 @@ const instructorSchema = new Schema({
     timestamps: true
 });
 
-module.exports = instructorSchema;
+module.exports = instructorSchema;*/

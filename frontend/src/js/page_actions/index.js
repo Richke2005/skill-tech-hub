@@ -5,6 +5,8 @@ const InstructorService = require('../services/instructorServices.js');
 const UserService = require('../services/userServices.js');
 const AreaService = require('../services/areaServices.js');
 
+const userRoutes = require("./userRoutes");
+
 //Instânciando os serviços necessários para a requisição
 const enterpriseService = new EnterpriseService();
 const curseService = new CurseService();
