@@ -33,7 +33,7 @@
           <h1>Cadastre-se</h1>
       </div>
 
-      <form action="http://localhost:3000/funcionario" method="POST" class="formLogin">
+      <form  class="formLogin">
         <label for="name">* Nome:</label>
         <input type="text" name="name" id="name" class="input" required>
 
@@ -71,7 +71,66 @@
       </form>
   </section>
 </div>
-<script src="../../dist/cadastroFuncBundle.js"></script>
+<!--<script src="../../dist/cadastroFuncBundle.js"></script>-->
+<script src="../js/page_actions/cadastroFunc.js" type="module"></script>
+<script type="module">
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log("✅ cadastroFunc.js carregado");
+
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      const cpf = document.getElementById('cpf');
+      const areasOfInterest = document.querySelectorAll('.form-check-input');
+      const button = document.getElementById('cadButton');
+
+      button.addEventListener('click', async () => {
+        const data = {
+          nome: name.value,
+          email: email.value,
+          password: password.value,
+          cpf: cpf.value,
+          areas_of_interest: []
+        };
+
+        areasOfInterest.forEach((area) => {
+          if (area.checked) {
+            data.areas_of_interest.push(area.value);
+          }
+        });
+
+        try {
+          const response = await fetch('http://localhost:3001/skilltech/api/v1/users', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            alert(result.message || 'Usuário cadastrado com sucesso!');
+            window.location.href = './login_funcionario.html';
+          } else if (result.erros && Array.isArray(result.erros)) {
+              alert('Erros encontrados:\n' + result.erros.join('\n'));
+            } else if (result.message && result.message.errors) {
+              // Extrai mensagens do Mongoose
+              const mensagens = Object.values(result.message.errors).map(e => e.message);
+              alert('Erros encontrados:\n' + mensagens.join('\n'));
+            } else if (typeof result.message === 'string') {
+              alert(result.message);
+            } else {
+              alert('Erro desconhecido: ' + JSON.stringify(result));
+            }
+        } catch (error) {
+          console.error('Erro ao cadastrar:', error);
+          alert('Erro de conexão com o servidor.');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 

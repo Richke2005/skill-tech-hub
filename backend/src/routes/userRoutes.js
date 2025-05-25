@@ -17,6 +17,8 @@ router
 .put("/skilltech/api/v1/users/:id", (req, res) => userController.update(req, res))
 .delete("/skilltech/api/v1/users/:id", (req, res) => userController.delete(req, res));
 
+router.put("/skilltech/api/v1/users/:id/enroll", (req, res) => userController.enrollInCurso(req, res));
+router.put("/skilltech/api/v1/users/:id/register-course", (req, res) => userController.registerCourse(req, res));
 
 /*-----------------------------------------------------------*/
 

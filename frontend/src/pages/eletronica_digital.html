@@ -319,7 +319,8 @@
         
     
       </div>
-    
+    <button id="cadastrarCursoBtn">Cadastrar-se</button>
+
     <script src="../js/animations/sidebarMov.js"></script>
     
     
@@ -360,5 +361,63 @@
  });
  
      </script>
+
+     <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const userId = localStorage.getItem("loggedUserId") || sessionStorage.getItem("user_id");
+  const urlParams = new URLSearchParams(window.location.search);
+  const cursoId = urlParams.get("id"); // AGORA ESTE CURSOID VIRÁ CORRETO APÓS A CORREÇÃO NO catalogoBundle.js
+
+  console.log("ID do usuário (da sessão/local storage):", userId);
+  console.log("ID do curso (da URL):", cursoId); // DEVE MOSTRAR UM ID REAL AQUI
+
+  const botao = document.getElementById("cadastrarCursoBtn");
+  if (!botao) {
+    console.error("Botão de cadastro não encontrado.");
+    return;
+  }
+
+  // Desabilita o botão se o ID do curso for nulo, para evitar cliques inválidos
+  if (!cursoId) {
+      botao.disabled = true;
+      botao.textContent = "Curso inválido para cadastro";
+      return;
+  }
+
+  botao.addEventListener("click", async () => {
+    if (!userId) {
+      alert("Você precisa estar logado para se cadastrar em um curso.");
+      return;
+    }
+
+    console.log("Tentando cadastrar o curso com ID:", cursoId, "para o usuário:", userId);
+
+    try {
+      const res = await fetch(`http://localhost:3001/skilltech/api/v1/users/${userId}/register-course`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        // Envia o ID real do curso, que agora vem da URL
+        body: JSON.stringify({ curses: [cursoId] })
+      });
+
+      const result = await res.json(); // Tenta parsear JSON mesmo em caso de erro
+
+      if (res.ok) {
+        alert("Curso cadastrado com sucesso!");
+        // Opcional: Desabilitar o botão ou mudar o texto após o cadastro bem-sucedido
+        // botao.textContent = 'Cadastrado!';
+        // botao.disabled = true;
+      } else {
+        // Se a resposta não for OK, exibe a mensagem de erro do servidor ou uma genérica
+        alert(result.message || "Erro ao cadastrar no curso. Verifique o console para mais detalhes.");
+        console.error("Erro na resposta do servidor:", result);
+      }
+    } catch (err) {
+      console.error("Erro ao se cadastrar (problema de rede ou JSON inválido):", err);
+      alert("Erro ao conectar com o servidor ou resposta inválida. Verifique sua conexão ou o console.");
+    }
+  });
+});
+</script>
 </body>
 </html>

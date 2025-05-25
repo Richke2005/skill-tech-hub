@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
   entry: {
     homeBundle: './src/js/page_actions/home.js',
-    loginFuncBundle: './src/js/page_actions/loginFuncionario.js'
+    loginFuncBundle: './src/js/page_actions/loginFuncionario.js',
+    perfilBundle: './src/js/page_actions/perfil.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

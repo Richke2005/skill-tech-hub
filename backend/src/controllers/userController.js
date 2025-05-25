@@ -1,6 +1,6 @@
 const Controller = require("./controller.js");
 const UserService = require("../services/userServices.js");
-
+const mongoose = require("mongoose");
 
 
 const Usuario = require('../database/models/user.js'); 
@@ -31,7 +31,30 @@ class UserController extends Controller{
      
     }
 
-    async getCursesByUserId(req, res){
+    async getCursesByUserId(req, res) {
+        try {
+            // Certifique-se de que 'Curse' é o nome do seu modelo de curso em Mongoose
+            const user = await Usuario.findById(req.params.id).populate('curses');
+
+            if (!user) {
+                return res.status(404).json({ message: 'Usuário não encontrado' });
+            }
+
+            // Garante que 'user.curses' é um array, mesmo que vazio
+            const userCurses = user.curses || []; // Deve ser um array populado ou vazio
+
+            // Retorna os cursos. Se não houver cursos, retorna um array vazio.
+            return res.status(200).json(userCurses);
+
+        } catch (err) {
+            console.error("Erro ao buscar cursos do usuário:", err);
+            // IMPORTANTE: Sempre envie uma resposta em caso de erro!
+            return res.status(500).json({ message: 'Erro interno do servidor ao buscar cursos.' });
+        }
+    }
+
+
+    /*async getCursesByUserId(req, res){
         try{
             const userId = req.params.id;
             const data = await userService.searchCursesByUserId(userId);
@@ -41,9 +64,58 @@ class UserController extends Controller{
         }catch(err){
             return res.status(400).send({message: err.message});
         }
+    }*/
+//===============================================================================
+async createUser(req, res) {
+  try {
+    const usuario = new Usuario(req.body);
+    await usuario.save();
+    res.status(201).json({ message: 'Usuário criado com sucesso!' });
+  } catch (err) {
+    if (err.name === 'ValidationError') {
+      const erros = Object.values(err.errors).map(e => e.message);
+      return res.status(400).json({ message: 'Erro de validação.', erros });
     }
 
+    console.error(err);
+    res.status(500).json({ message: 'Erro interno no servidor.' });
+  }
+}
 
+async registerCourse(req, res) {
+  try {
+    const id = req.params.id;
+    const { curses } = req.body;
+
+    if (!Array.isArray(curses) || curses.length === 0) {
+      return res.status(400).json({ message: 'Lista de cursos inválida.' });
+    }
+
+    // Garante que todos os IDs recebidos sejam convertidos para ObjectId
+    const objectIdList = curses.map(cid => new mongoose.Types.ObjectId(cid));
+
+    const updated = await Usuario.findByIdAndUpdate(
+      id,
+      { $addToSet: { curses: { $each: objectIdList } } }, // evita duplicação
+      { new: true }
+    ).populate("curses");
+
+    if (!updated) {
+      return res.status(404).json({ message: "Usuário não encontrado." });
+    }
+
+    return res.status(200).json({ message: "Curso cadastrado com sucesso.", user: updated });
+  } catch (err) {
+    console.error("Erro ao cadastrar curso:", err);
+    return res.status(500).json({ message: "Erro interno ao cadastrar cursos." });
+  }
+}
+
+
+
+
+
+//===============================================================================
     /*async redefinirSenha(req, res) {
         console.log("Função redefinirSenha chamada"); // Adicione esta linha
         const { email, password } = req.body;

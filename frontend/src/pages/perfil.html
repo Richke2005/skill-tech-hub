@@ -2,11 +2,12 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
+    
+    
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
       <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../css/pages/perfil.css">
     <link rel="stylesheet" href="../css/components/components.css">
@@ -15,9 +16,32 @@
     <!-- Linking Google fonts for icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
     <title>profile</title>
+    <style>
+      #lista-cursos a {
+  color: #0d6efd;
+  text-decoration: none;
+  display: block;
+  padding: 8px 16px;
+  transition: background 0.2s;
+}
+
+#lista-cursos a:hover {
+  background-color: #f8f9fa;
+  text-decoration: underline;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(90deg, rgba(64,9,120,1) 0%, rgba(67,10,125,1) 22%, rgba(45,5,121,1) 54%, rgba(9,0,117,1) 100%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+    </style>
 </head>
 <body>
-    <div class="page-content" style="height: 100vh;">
+    
+<div class="page-content" style="height: 100vh;">
         <aside class="sidebar">
             <!-- Sidebar header -->
             <header class="sidebar-header">
@@ -96,7 +120,7 @@
                   <span class="nav-tooltip">Profile</span>
                 </li>
                 <li class="nav-item">
-                  <a href="../index.html" class="nav-link">
+                  <a href="/index.html" class="nav-link">
                     <span class="nav-icon material-symbols-rounded">logout</span>
                     <span class="nav-label">Logout</span>
                   </a>
@@ -108,6 +132,17 @@
 
           <div class="container" style="margin-left: 100px;">
             <div class="main-body">
+                                <div class="row gutters-sm">
+                          <div class="col-md-4 mb-3">
+                              </div>
+                          <div class="col-md-8">
+                              </div>
+                      </div>
+
+                      <div class="d-flex justify-content-end"> <div id="meus-cursos-container" class="mt-3" style="max-width: 400px; width: 100%;">
+                              </div>
+                      </div>
+                  </div>
 
                 
                   <div class="row gutters-sm">
@@ -117,9 +152,10 @@
                           <div class="d-flex flex-column align-items-center text-center">
                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                             <div class="mt-3">
-                              <h4>John Doe</h4>
-                              <p class="text-secondary mb-1">Full Stack Developer</p>
-                              <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                              <h4 id="name"></h4>
+                                  <p class="text-secondary mb-1" id="enterprise"></p>
+                                  <p class="text-muted font-size-sm" id="interests"></p>
+
                               <button class="btn btn-primary">Follow</button>
                               <button class="btn btn-outline-primary">Message</button>
                             </div>
@@ -206,71 +242,255 @@
                           </div>
                         </div>
                       </div>
-        
-                      <div class="row gutters-sm">
-                        <div class="col-sm-6 mb-3">
-                          <div class="card h-100">
-                            <div class="card-body">
-                              <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                              <small>Web Design</small>
-                              <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <small>Website Markup</small>
-                              <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <small>One Page</small>
-                              <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <small>Mobile Template</small>
-                              <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <small>Backend API</small>
-                              <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 mb-3">
-                          <div class="card h-100">
-                            <div class="card-body">
-                              <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                              <small>Web Design</small>
-                              <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <small>Website Markup</small>
-                              <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <small>One Page</small>
-                              <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <small>Mobile Template</small>
-                              <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <small>Backend API</small>
-                              <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+
+                      <div class="card" style="width: 70%; max-width: 500px;">
+                      <div class="card-header d-flex justify-content-between align-items-center" id="toggleCursos" style="cursor: pointer;">
+                        <h5 class="mb-0">Meus Cursos</h5>
+                        <span id="iconCursos" class="material-symbols-rounded">expand_more</span>
+                      </div>
+                      <div id="cursosContent" class="card-body" style="display: none;">
+                        <ul id="lista-cursos" class="list-group list-group-flush"></ul>
                       </div>
                     </div>
                   </div>
         
+                      <!--<div class="row gutters-sm">
+                        <div class="col-sm-6 mb-3">
+                          <div class="card h-100">
+                            <div class="card-body">
+                              <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
+                              <small>Web Design</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>Website Markup</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>One Page</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>Mobile Template</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>Backend API</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                          <div class="card h-100">
+                            <div class="card-body">
+                              <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
+                              <small>Web Design</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>Website Markup</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>One Page</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>Mobile Template</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <small>Backend API</small>
+                              <div class="progress mb-3" style="height: 5px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>-->
+                    </div>
+                  </div>
+        
                 </div>
-            </div>
 
-    </div>
-    <script src="../../dist/perfilBundle.js"></script>
+                  <div class="d-flex justify-content-center mt-4" style="padding-right: -10px;">
+
+
+
+                    
+
+
+            </div>       
+
+
+
+  
+
+  
+    <!--<script src="../../dist/perfilBundle.js"></script>-->
+    
+  
+
+
+
+    
     <script src="../js/animations/sidebarMov.js"></script>
+   <script>
+    /*document.addEventListener('DOMContentLoaded', async () => {
+      console.log("user_id no sessionStorage:", sessionStorage.getItem("user_id"));
+      console.log("user_id no localStorage:", localStorage.getItem("loggedUserId"));
+        const userId = localStorage.getItem('loggedUserId');
+        //const paginaHTML = cursoParaPaginaMapa[tituloNormalizado] || 'moduloscurso.html';
+
+
+        const listaCursosElement = document.getElementById('lista-cursos');
+        if (!listaCursosElement) {
+            console.error("Erro: Elemento 'lista-cursos' não encontrado no DOM. Verifique seu HTML.");
+            return; // Impede que o script continue se o elemento não existe
+        }
+
+        if (!userId) {
+            console.error("ID do usuário não encontrado. Não é possível carregar cursos.");
+            listaCursosElement.innerHTML = '<li>Por favor, faça login para ver seus cursos.</li>';
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:3001/skilltech/api/v1/users/${userId}/curses`);
+            
+            // CLONA A RESPOSTA PARA VER O CONTEÚDO BRUTO E DEPOIS PROCESSAR COMO JSON
+            const responseClone = response.clone();
+            const responseText = await responseClone.text();
+            console.log("Resposta bruta do servidor (GET /curses):", responseText);
+
+            if (!response.ok) {
+                // Tenta ler a mensagem de erro do servidor se a resposta não for OK
+                let errorDetails = { message: 'Erro desconhecido ao buscar cursos.' };
+                try {
+                    const jsonError = await response.json();
+                    errorDetails = jsonError; // Assume que o erro é um JSON com detalhes
+                } catch (e) {
+                    // Se a resposta não for JSON (ex: vazia ou HTML de erro), usa o texto bruto
+                    errorDetails.message = responseText || 'Sem mensagem de erro do servidor.';
+                }
+                throw new Error(`Erro HTTP ${response.status}: ${errorDetails.message}`);
+            }
+
+            // Tenta parsear o JSON da resposta original. Se a resposta for vazia, isso falhará.
+            const data = await response.json();
+
+            // A estrutura esperada é um array de objetos de curso (ex: `[curso1, curso2]`).
+            // Se o backend retorna `[{ curses: [...] }]`, ajuste aqui:
+            // const cursosDoUsuario = Array.isArray(data) && data.length > 0 && Array.isArray(data[0].curses)
+            //                                ? data[0].curses
+            //                                : [];
+            // Se o backend retornar diretamente o array de cursos, use:
+            const cursosDoUsuario = Array.isArray(data) ? data : [];
+
+
+            if (cursosDoUsuario.length === 0) {
+                listaCursosElement.innerHTML = '<li>Nenhum curso cadastrado ainda.</li>';
+                return;
+            }
+
+            listaCursosElement.innerHTML = ''; // Limpa a lista existente
+
+            // Mapeamento de títulos de cursos para nomes de arquivos HTML
+            // Certifique-se de que os títulos aqui correspondem exatamente aos títulos retornados pelo backend
+            const cursoParaPaginaMapa = {
+                'eletrônica digital': 'eletronica_digital.html',
+                'elétric circuits': 'eletronica_digital.html',
+                'clp schneider': 'clp_schneider.html',
+                'robótic kuka': 'robotic_kuka.html',
+                'robótica yaskawa': 'robotic_yaskawa.html',
+                'torno mecânico': 'torno_mecanico.html',
+                'autodesk inventor': 'inventor.html',
+                'circuitos elétricos': 'circuitos_eletricos.html'
+            };
+              
+
+            cursosDoUsuario.forEach(curso => {
+                const titulo = curso.title || 'Curso sem título';
+                const cursoId = curso._id;
+
+                let paginaHTML = 'moduloscurso.html'; // Página padrão, caso não haja mapeamento específico
+
+                // Normaliza o título para a comparação (minúsculas)
+                const tituloNormalizado = titulo.toLowerCase();
+
+                // Encontra a página HTML correspondente no mapa
+                if (cursoParaPaginaMapa.hasOwnProperty(tituloNormalizado)) {
+                    paginaHTML = cursoParaPaginaMapa[tituloNormalizado];
+                }
+
+                if (!cursoId || !titulo) {
+                      console.warn("Curso inválido detectado:", curso);
+                      return;
+                    }
+
+                // CONSTRÓI A URL FINAL USANDO APENAS O NOME DA PÁGINA
+                // Se perfil.html está em src/pages/ e clp_schneider.html está em src/pages/,
+                // o caminho é simplesmente './nome_da_pagina.html'
+                const urlFinal = `./${paginaHTML}?id=${cursoId}`; // CORREÇÃO AQUI!
+
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = urlFinal; // Atribui a URL corrigida
+                a.textContent = titulo;
+                a.style.color = '#007bff'; // Exemplo de estilo
+                a.style.textDecoration = 'none';
+                a.style.marginBottom = '5px';
+                a.style.display = 'block';
+
+                li.appendChild(a);
+                listaCursosElement.appendChild(li);
+            });
+        } catch (err) {
+            console.error('Erro ao carregar cursos do usuário:', err);
+            listaCursosElement.innerHTML = `<li>Erro ao carregar seus cursos: ${err.message || 'Verifique o console para mais detalhes.'}</li>`;
+        }
+        const collapseElement = document.getElementById('listaCursosCollapse');
+          const collapseIcon = document.getElementById('collapseIcon'); // O ID que você adicionou ao <span> do ícone
+
+    if (collapseElement && collapseIcon) {
+        // Inicialmente, se a seção começar aberta ('show'), o ícone já deve ser 'expand_less'
+        if (collapseElement.classList.contains('show')) {
+            collapseIcon.textContent = 'expand_less';
+        }
+
+        // Escuta o evento de expansão
+        collapseElement.addEventListener('show.bs.collapse', () => {
+            collapseIcon.textContent = 'expand_less';
+        });
+
+        // Escuta o evento de contração
+        collapseElement.addEventListener('hide.bs.collapse', () => {
+            collapseIcon.textContent = 'expand_more';
+        });
+    }
+    });*/
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("toggleCursos");
+    const content = document.getElementById("cursosContent");
+    const icon = document.getElementById("iconCursos");
+
+    if (toggle && content && icon) {
+      toggle.addEventListener("click", () => {
+        const isVisible = content.style.display === "block";
+        content.style.display = isVisible ? "none" : "block";
+        icon.textContent = isVisible ? "expand_more" : "expand_less";
+      });
+    }
+  });
+
+    
+    </script>
+    <script src="../js/page_actions/perfil.js"></script>
+    
 </body>
 </html>
+
+
